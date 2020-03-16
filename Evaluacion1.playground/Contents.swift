@@ -1,4 +1,4 @@
-//Creado Por: Ramon Felix. Marzo 15 2020.
+//Creado Por: Ramon Felix. Marzo 15 2020
 import UIKit
 
 var rango = 0...100
