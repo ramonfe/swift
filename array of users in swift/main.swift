@@ -1,12 +1,14 @@
-//
-//  main.swift
-//  array of users in swift
-//
-//  Created by home on 10/02/22.
-//  Copyright © 2022 RF. All rights reserved.
-//
-
 import Foundation
 
-print("Hello, World!")
+func SearchFor(searchName:String)
+{
+    for anyUser:User in PopulateUsers()
+    {
+        if (anyUser.name == searchName){
+            print("\(searchName) height is \(anyUser.height)")
+        }
+    }
+}
+
+SearchFor(searchName: "carmen")
 
