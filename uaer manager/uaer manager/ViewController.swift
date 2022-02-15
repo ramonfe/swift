@@ -44,6 +44,12 @@ class ViewController: UIViewController {
         txtvHight.text=""
         txtvCity.text=""
         txtvPhone.text=""
+        //oculta teclado
+        txtvName.resignFirstResponder()
+        txtvHight.resignFirstResponder()
+        txtvCity.resignFirstResponder()
+        txtvPhone.resignFirstResponder()
+        
     }
 
 }
