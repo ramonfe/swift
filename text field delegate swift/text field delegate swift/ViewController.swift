@@ -1,6 +1,6 @@
 import UIKit
 
-class ViewController: UIViewController,UISearchTextFieldDelegate
+class ViewController: UIViewController,UITextFieldDelegate
 {
 
     @IBOutlet weak var myTextFld: UITextField!
