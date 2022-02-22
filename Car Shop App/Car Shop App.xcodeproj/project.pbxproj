@@ -22,6 +22,7 @@
 		F419881227C304230003EF1C /* ViewController+StatusAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = F419881127C304230003EF1C /* ViewController+StatusAction.swift */; };
 		F419881427C307A60003EF1C /* UIColor+Named.swift in Sources */ = {isa = PBXBuildFile; fileRef = F419881327C307A60003EF1C /* UIColor+Named.swift */; };
 		F419881627C308F40003EF1C /* ViewController+ShowString.swift in Sources */ = {isa = PBXBuildFile; fileRef = F419881527C308F40003EF1C /* ViewController+ShowString.swift */; };
+		F4B1BBB327C4A6D1000DF1DA /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B1BBB227C4A6D1000DF1DA /* AddViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		F419881127C304230003EF1C /* ViewController+StatusAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+StatusAction.swift"; sourceTree = "<group>"; };
 		F419881327C307A60003EF1C /* UIColor+Named.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Named.swift"; sourceTree = "<group>"; };
 		F419881527C308F40003EF1C /* ViewController+ShowString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+ShowString.swift"; sourceTree = "<group>"; };
+		F4B1BBB227C4A6D1000DF1DA /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 				F419881127C304230003EF1C /* ViewController+StatusAction.swift */,
 				F419880F27C303B90003EF1C /* ViewController+TypeAction.swift */,
 				F41987F727C2ECC20003EF1C /* Main.storyboard */,
+				F4B1BBB227C4A6D1000DF1DA /* AddViewController.swift */,
 				F41987FA27C2ECCA0003EF1C /* Assets.xcassets */,
 				F41987FC27C2ECCA0003EF1C /* LaunchScreen.storyboard */,
 				F41987FF27C2ECCA0003EF1C /* Info.plist */,
@@ -176,6 +179,7 @@
 				F419880E27C2F8920003EF1C /* Dummies.swift in Sources */,
 				F41987F427C2ECC20003EF1C /* SceneDelegate.swift in Sources */,
 				F419880A27C2F1C40003EF1C /* Sedan.swift in Sources */,
+				F4B1BBB327C4A6D1000DF1DA /* AddViewController.swift in Sources */,
 				F419880C27C2F1D80003EF1C /* Truck.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
