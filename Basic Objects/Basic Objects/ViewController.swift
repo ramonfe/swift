@@ -11,6 +11,8 @@ class ViewController: UIViewController {
 //outlets
     @IBOutlet weak var myButton: UIButton!
     @IBOutlet weak var myPickerView: UIPickerView!
+    @IBOutlet weak var myPageControl: UIPageControl!
+    
     // variables
     private let arrPicker = ["Uno","dos","tres","cuatro","cinco"]
     
@@ -23,6 +25,11 @@ class ViewController: UIViewController {
         myPickerView.backgroundColor = .lightGray
         myPickerView.dataSource=self
         myPickerView.delegate = self
+        
+        //page control
+        myPageControl.numberOfPages = arrPicker.count
+        myPageControl.currentPageIndicatorTintColor = .blue
+        myPageControl.pageIndicatorTintColor = .lightGray
     }
 //actions
     @IBAction func myButtonAction(_ sender: Any) {
@@ -33,7 +40,11 @@ class ViewController: UIViewController {
         }
     }
     @IBOutlet var myPickerViewAction: [UIPickerView]!
-
+    @IBAction func myPageControlAction(_ sender: Any) {
+        myPickerView.selectRow(myPageControl.currentPage, inComponent: 0, animated: true)
+        myButton.setTitle(arrPicker[myPageControl.currentPage], for: .normal)
+    }
+    
 }
 
 extension ViewController: UIPickerViewDataSource, UIPickerViewDelegate
@@ -50,6 +61,8 @@ extension ViewController: UIPickerViewDataSource, UIPickerViewDelegate
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         myButton.setTitle(arrPicker[row], for: .normal)
+        
+        myPageControl.currentPage = row
     }
 }
 
