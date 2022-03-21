@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F40553C127E81A4900846A3D /* DateDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40553C027E81A4900846A3D /* DateDecoder.swift */; };
+		F40553C427E82CD000846A3D /* NewUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40553C327E82CD000846A3D /* NewUser.swift */; };
 		F4193D6D27E6FB6000441FEC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4193D6C27E6FB6000441FEC /* AppDelegate.swift */; };
 		F4193D6F27E6FB6000441FEC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4193D6E27E6FB6000441FEC /* SceneDelegate.swift */; };
 		F4193D7127E6FB6000441FEC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4193D7027E6FB6000441FEC /* ViewController.swift */; };
@@ -21,6 +22,7 @@
 
 /* Begin PBXFileReference section */
 		F40553C027E81A4900846A3D /* DateDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateDecoder.swift; sourceTree = "<group>"; };
+		F40553C327E82CD000846A3D /* NewUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUser.swift; sourceTree = "<group>"; };
 		F4193D6927E6FB6000441FEC /* networking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = networking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4193D6C27E6FB6000441FEC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4193D6E27E6FB6000441FEC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				F4193D8C27E7000900441FEC /* User.swift */,
+				F40553C327E82CD000846A3D /* NewUser.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -184,6 +187,7 @@
 				F4193D8D27E7000900441FEC /* User.swift in Sources */,
 				F40553C127E81A4900846A3D /* DateDecoder.swift in Sources */,
 				F4193D6F27E6FB6000441FEC /* SceneDelegate.swift in Sources */,
+				F40553C427E82CD000846A3D /* NewUser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

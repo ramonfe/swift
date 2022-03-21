@@ -32,31 +32,53 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WIf-ah-wCW">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WIf-ah-wCW">
                                 <rect key="frame" x="16" y="143" width="382" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4kI-wY-MNQ">
+                                <rect key="frame" x="16" y="180" width="382" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qr5-GQ-5fm">
+                                <rect key="frame" x="16" y="217" width="382" height="30"/>
+                                <state key="normal" title="Add User"/>
+                                <connections>
+                                    <action selector="btnAddUser:" destination="BYZ-38-t0r" eventType="touchUpInside" id="a9X-re-QlB"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Qr5-GQ-5fm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="5AZ-jA-0wS"/>
+                            <constraint firstItem="WIf-ah-wCW" firstAttribute="trailing" secondItem="4kI-wY-MNQ" secondAttribute="trailing" id="AqU-VV-Y6f"/>
                             <constraint firstItem="gSk-aP-M69" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Je3-tO-2E7"/>
                             <constraint firstItem="HG7-Ug-89u" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="N8F-Z5-jpZ"/>
+                            <constraint firstItem="WIf-ah-wCW" firstAttribute="top" secondItem="Duo-GA-KNZ" secondAttribute="bottom" constant="16" id="UdM-Ac-pOt"/>
+                            <constraint firstItem="WIf-ah-wCW" firstAttribute="leading" secondItem="4kI-wY-MNQ" secondAttribute="leading" id="Zmx-DO-c7k"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4kI-wY-MNQ" secondAttribute="trailing" constant="16" id="bda-E5-5av"/>
                             <constraint firstItem="HG7-Ug-89u" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="eGR-Qd-N61"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Qr5-GQ-5fm" secondAttribute="trailing" constant="16" id="eQ7-bv-YYR"/>
+                            <constraint firstItem="4kI-wY-MNQ" firstAttribute="top" secondItem="WIf-ah-wCW" secondAttribute="bottom" constant="16" id="kXW-t2-kTI"/>
+                            <constraint firstItem="Qr5-GQ-5fm" firstAttribute="top" secondItem="4kI-wY-MNQ" secondAttribute="bottom" constant="16" id="odh-yb-gK5"/>
                             <constraint firstItem="Duo-GA-KNZ" firstAttribute="top" secondItem="HG7-Ug-89u" secondAttribute="bottom" constant="16" id="oos-uo-VgN"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="HG7-Ug-89u" secondAttribute="trailing" constant="16" id="sCc-cw-0E5"/>
                             <constraint firstItem="gSk-aP-M69" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sXD-Fq-dwn"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Duo-GA-KNZ" secondAttribute="trailing" constant="16" id="xKo-xF-VZn"/>
                             <constraint firstItem="Duo-GA-KNZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="yCy-Df-QZq"/>
+                            <constraint firstItem="4kI-wY-MNQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="yi3-6b-sjI"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="activityIndicator" destination="gSk-aP-M69" id="7vO-Uo-h8H"/>
                         <outlet property="btnGetUser" destination="HG7-Ug-89u" id="GUU-6h-GiD"/>
                         <outlet property="emailLabel" destination="WIf-ah-wCW" id="yPG-MZ-MUi"/>
+                        <outlet property="idUser" destination="4kI-wY-MNQ" id="OlV-2X-aug"/>
                         <outlet property="nameLabel" destination="Duo-GA-KNZ" id="Fkg-FO-Ovx"/>
                     </connections>
                 </viewController>
