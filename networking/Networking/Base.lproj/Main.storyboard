@@ -23,9 +23,6 @@
                                     <action selector="btnGetUserAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ElD-QM-eHq"/>
                                 </connections>
                             </button>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="gSk-aP-M69">
-                                <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
-                            </activityIndicatorView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Duo-GA-KNZ">
                                 <rect key="frame" x="16" y="106" width="382" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -44,6 +41,9 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3oT-7L-1vc">
+                                <rect key="frame" x="20" y="336" width="374" height="526"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qr5-GQ-5fm">
                                 <rect key="frame" x="16" y="217" width="382" height="30"/>
                                 <state key="normal" title="Add User"/>
@@ -51,17 +51,31 @@
                                     <action selector="btnAddUser:" destination="BYZ-38-t0r" eventType="touchUpInside" id="a9X-re-QlB"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="gSk-aP-M69">
+                                <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                            </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Df-hR-Blc">
+                                <rect key="frame" x="150" y="584" width="114" height="30"/>
+                                <state key="normal" title="Download Image"/>
+                                <connections>
+                                    <action selector="downloadImageAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Mzg-Xa-9U0"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3oT-7L-1vc" secondAttribute="trailing" constant="20" id="3Cc-ds-nbg"/>
                             <constraint firstItem="Qr5-GQ-5fm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="5AZ-jA-0wS"/>
                             <constraint firstItem="WIf-ah-wCW" firstAttribute="trailing" secondItem="4kI-wY-MNQ" secondAttribute="trailing" id="AqU-VV-Y6f"/>
                             <constraint firstItem="gSk-aP-M69" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Je3-tO-2E7"/>
                             <constraint firstItem="HG7-Ug-89u" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="N8F-Z5-jpZ"/>
+                            <constraint firstItem="3oT-7L-1vc" firstAttribute="top" secondItem="Qr5-GQ-5fm" secondAttribute="bottom" constant="89" id="TKE-gd-X53"/>
                             <constraint firstItem="WIf-ah-wCW" firstAttribute="top" secondItem="Duo-GA-KNZ" secondAttribute="bottom" constant="16" id="UdM-Ac-pOt"/>
                             <constraint firstItem="WIf-ah-wCW" firstAttribute="leading" secondItem="4kI-wY-MNQ" secondAttribute="leading" id="Zmx-DO-c7k"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4kI-wY-MNQ" secondAttribute="trailing" constant="16" id="bda-E5-5av"/>
+                            <constraint firstItem="3oT-7L-1vc" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="c1d-Fa-Ial"/>
+                            <constraint firstItem="3Df-hR-Blc" firstAttribute="centerX" secondItem="3oT-7L-1vc" secondAttribute="centerX" id="do0-zo-wMk"/>
                             <constraint firstItem="HG7-Ug-89u" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="eGR-Qd-N61"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Qr5-GQ-5fm" secondAttribute="trailing" constant="16" id="eQ7-bv-YYR"/>
                             <constraint firstItem="4kI-wY-MNQ" firstAttribute="top" secondItem="WIf-ah-wCW" secondAttribute="bottom" constant="16" id="kXW-t2-kTI"/>
@@ -69,7 +83,9 @@
                             <constraint firstItem="Duo-GA-KNZ" firstAttribute="top" secondItem="HG7-Ug-89u" secondAttribute="bottom" constant="16" id="oos-uo-VgN"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="HG7-Ug-89u" secondAttribute="trailing" constant="16" id="sCc-cw-0E5"/>
                             <constraint firstItem="gSk-aP-M69" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sXD-Fq-dwn"/>
+                            <constraint firstItem="3Df-hR-Blc" firstAttribute="centerY" secondItem="3oT-7L-1vc" secondAttribute="centerY" id="vpf-oU-ypJ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Duo-GA-KNZ" secondAttribute="trailing" constant="16" id="xKo-xF-VZn"/>
+                            <constraint firstItem="3oT-7L-1vc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="xTG-Dg-kjD"/>
                             <constraint firstItem="Duo-GA-KNZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="yCy-Df-QZq"/>
                             <constraint firstItem="4kI-wY-MNQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="yi3-6b-sjI"/>
                         </constraints>
@@ -77,14 +93,17 @@
                     <connections>
                         <outlet property="activityIndicator" destination="gSk-aP-M69" id="7vO-Uo-h8H"/>
                         <outlet property="btnGetUser" destination="HG7-Ug-89u" id="GUU-6h-GiD"/>
+                        <outlet property="downloadImageBtn" destination="3Df-hR-Blc" id="aDu-eJ-rb2"/>
+                        <outlet property="downloadImageButton" destination="vpf-oU-ypJ" id="fOh-ly-DCL"/>
                         <outlet property="emailLabel" destination="WIf-ah-wCW" id="yPG-MZ-MUi"/>
                         <outlet property="idUser" destination="4kI-wY-MNQ" id="OlV-2X-aug"/>
+                        <outlet property="logoImageView" destination="3oT-7L-1vc" id="l0S-zF-IjN"/>
                         <outlet property="nameLabel" destination="Duo-GA-KNZ" id="Fkg-FO-Ovx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="142" y="129"/>
+            <point key="canvasLocation" x="140.57971014492756" y="128.57142857142856"/>
         </scene>
     </scenes>
     <resources>

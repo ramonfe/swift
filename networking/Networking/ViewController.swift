@@ -6,11 +6,15 @@
 //
 
 import UIKit
+import Kingfisher
 
 class ViewController: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var idUser: UILabel!
+    @IBOutlet weak var logoImageView: UIImageView!
+    @IBOutlet weak var downloadImageButton: NSLayoutConstraint!
+    @IBOutlet weak var downloadImageBtn: UIButton!
     
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
@@ -65,6 +69,10 @@ class ViewController: UIViewController {
             self.nameLabel.text = error.debugDescription
         }
 
+    }
+    @IBAction func downloadImageAction(_ sender: Any) {
+        downloadImageBtn.isHidden = true
+        logoImageView.kf.setImage(with: URL(string: "https://cdn.pixabay.com/photo/2017/04/10/05/42/kitten-2217603_960_720.jpg"))
     }
 }
 
