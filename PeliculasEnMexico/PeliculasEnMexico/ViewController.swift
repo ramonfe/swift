@@ -9,6 +9,8 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var tabBar: UITabBar!
+    
     private let myCountries = ["España","Mexico","Brasil","Colombia","Argentina"]
     
     @IBOutlet weak var tableView: UITableView!
