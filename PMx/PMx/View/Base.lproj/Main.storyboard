@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JbP-wu-TBD">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Proximos Estrenos-->
+        <scene sceneID="CkB-EK-Z9h">
+            <objects>
+                <viewController id="bp6-0i-Nap" customClass="SecondViewController" customModule="PMx" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ywi-gC-nP6">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Mhg-Kv-xD9"/>
+                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Proximos Estrenos" id="B4R-od-qnd"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s1a-Vv-zrT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1429" y="417"/>
+        </scene>
+        <!--En Cartelera-->
+        <scene sceneID="p8K-TG-FB5">
+            <objects>
+                <viewController id="OJJ-bL-40i" customClass="ViewController" customModule="PMx" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1Rr-Cj-ZcF">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8mY-QG-aBx">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="g3e-o1-Sfv"/>
+                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                        <constraints>
+                            <constraint firstItem="8mY-QG-aBx" firstAttribute="leading" secondItem="g3e-o1-Sfv" secondAttribute="leading" id="Ci8-E3-p1O"/>
+                            <constraint firstItem="8mY-QG-aBx" firstAttribute="trailing" secondItem="g3e-o1-Sfv" secondAttribute="trailing" id="XEz-v2-XeU"/>
+                            <constraint firstItem="g3e-o1-Sfv" firstAttribute="bottom" secondItem="8mY-QG-aBx" secondAttribute="bottom" id="lbZ-EM-ajZ"/>
+                            <constraint firstItem="8mY-QG-aBx" firstAttribute="top" secondItem="g3e-o1-Sfv" secondAttribute="top" id="typ-sp-a8P"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="En Cartelera" id="TM5-FA-iZ9"/>
+                    <connections>
+                        <outlet property="tableView" destination="8mY-QG-aBx" id="VI6-SA-cJa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l9w-lM-Zs6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1428.985507246377" y="-246.42857142857142"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="kYd-8L-2zS">
+            <objects>
+                <tabBarController id="JbP-wu-TBD" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Wpk-E9-N7q">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="OJJ-bL-40i" kind="relationship" relationship="viewControllers" id="f9W-YQ-48A"/>
+                        <segue destination="bp6-0i-Nap" kind="relationship" relationship="viewControllers" id="2p0-ez-ELE"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TV3-y9-AZ5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="342" y="-45"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

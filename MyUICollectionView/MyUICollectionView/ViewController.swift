@@ -25,7 +25,7 @@ class ViewController: UIViewController {
     private func setupMenuBar(){
         view.addSubview(menuBar)
         //constraints para la menuBar
-        menuBar.heightAnchor.constraint(equalToConstant: 50).isActive=true
+        menuBar.heightAnchor.constraint(equalToConstant: 100).isActive=true
         //menuBar.widthAnchor.constraint(equalToConstant: 50).isActive=true
         
         menuBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0).isActive=true
