@@ -20,6 +20,7 @@
                         <rect key="frame" x="10" y="9" width="98" height="160"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="98" id="cY6-f3-eIk"/>
+                            <constraint firstAttribute="height" constant="159" id="tM6-ev-iv1"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ftr-la-ylJ">
@@ -88,7 +89,7 @@
                 <outlet property="myImage" destination="FfJ-wp-k6b" id="cYE-uX-aGW"/>
                 <outlet property="titleLabel" destination="ftr-la-ylJ" id="zAs-Xl-dL4"/>
             </connections>
-            <point key="canvasLocation" x="140.57971014492756" y="153.01339285714286"/>
+            <point key="canvasLocation" x="-43" y="0.0"/>
         </tableViewCell>
     </objects>
     <resources>

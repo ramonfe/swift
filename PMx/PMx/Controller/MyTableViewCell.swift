@@ -18,7 +18,8 @@ class MyTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        //para que permita que la descripcion sea de mas de 1 renglon
+        actorsDescLabel.numberOfLines=0
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
