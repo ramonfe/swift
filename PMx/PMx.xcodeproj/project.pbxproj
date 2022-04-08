@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F44A280A27FFE754009B786E /* Films.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44A280927FFE754009B786E /* Films.swift */; };
+		F44A280E27FFF832009B786E /* helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44A280D27FFF832009B786E /* helpers.swift */; };
 		F49C6CAF27FBED5800B4F7CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49C6CAE27FBED5800B4F7CA /* AppDelegate.swift */; };
 		F49C6CB127FBED5800B4F7CA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49C6CB027FBED5800B4F7CA /* SceneDelegate.swift */; };
 		F49C6CB327FBED5800B4F7CA /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49C6CB227FBED5800B4F7CA /* MainViewController.swift */; };
@@ -20,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F44A280927FFE754009B786E /* Films.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Films.swift; sourceTree = "<group>"; };
+		F44A280D27FFF832009B786E /* helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = helpers.swift; sourceTree = "<group>"; };
 		F49C6CAB27FBED5800B4F7CA /* PMx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PMx.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F49C6CAE27FBED5800B4F7CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F49C6CB027FBED5800B4F7CA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -45,6 +49,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F44A280C27FFF805009B786E /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				F44A280D27FFF832009B786E /* helpers.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		F49C6CA227FBED5800B4F7CA = {
 			isa = PBXGroup;
 			children = (
@@ -64,6 +76,7 @@
 		F49C6CAD27FBED5800B4F7CA /* PMx */ = {
 			isa = PBXGroup;
 			children = (
+				F44A280C27FFF805009B786E /* Utils */,
 				F49C6CD127FC030300B4F7CA /* Model */,
 				F49C6CD027FC02F000B4F7CA /* View */,
 				F49C6CD227FC030C00B4F7CA /* Controller */,
@@ -89,6 +102,7 @@
 		F49C6CD127FC030300B4F7CA /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F44A280927FFE754009B786E /* Films.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -177,6 +191,8 @@
 				F49C6CC427FBEF9800B4F7CA /* MyCollectionViewController.swift in Sources */,
 				F49C6CB327FBED5800B4F7CA /* MainViewController.swift in Sources */,
 				F49C6CAF27FBED5800B4F7CA /* AppDelegate.swift in Sources */,
+				F44A280E27FFF832009B786E /* helpers.swift in Sources */,
+				F44A280A27FFE754009B786E /* Films.swift in Sources */,
 				F49C6CC927FBF56E00B4F7CA /* SecondViewController.swift in Sources */,
 				F49C6CB127FBED5800B4F7CA /* SceneDelegate.swift in Sources */,
 				F49C6CCD27FC02D300B4F7CA /* MyTableViewCell.swift in Sources */,

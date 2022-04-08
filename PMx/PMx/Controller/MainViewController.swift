@@ -7,6 +7,10 @@
 
 import UIKit
 
+let jsonUrl = "https://ramonfe.github.io/film/indexEstrenos.html"
+
+//let urlRequest = URLRequest(
+
 class ViewController: UIViewController{
 
     @IBOutlet weak var tableView: UITableView!
@@ -21,7 +25,27 @@ class ViewController: UIViewController{
         tableView.tableFooterView = UIView()
         
         tableView.register(UINib(nibName: "MyTableViewCell", bundle: nil), forCellReuseIdentifier: "mycustomcell")
+        loadJson()
     }
+}
+
+func loadJson(){
+    guard let url = URL(string: jsonUrl) else {return}
+    URLSession.shared.dataTask(with: url) { (data, response, err) in
+        //check error
+        //check response status 200
+        
+        guard let data = data else { return }
+        
+        let dataAsString = String(data: data, encoding: .utf8)
+        print(dataAsString)
+        do{
+            let json = try JSONDecoder().decode(Estrenos.self, from: data)
+            print(json)
+        } catch let jsonError{
+            print("error serializing: ",jsonError)
+        }
+    }.resume()
 }
 //MARK: UITableViewDataSource
 extension ViewController:UITableViewDataSource {
