@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		F42889EE28068B0900F55837 /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42889ED28068B0900F55837 /* NetworkProvider.swift */; };
-		F42889F3280691CA00F55837 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = F42889F2280691CA00F55837 /* Kingfisher */; };
 		F44A280A27FFE754009B786E /* Films.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44A280927FFE754009B786E /* Films.swift */; };
 		F44A280E27FFF832009B786E /* helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44A280D27FFF832009B786E /* helpers.swift */; };
 		F49C6CAF27FBED5800B4F7CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49C6CAE27FBED5800B4F7CA /* AppDelegate.swift */; };
@@ -21,6 +20,7 @@
 		F49C6CC927FBF56E00B4F7CA /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49C6CC827FBF56E00B4F7CA /* SecondViewController.swift */; };
 		F49C6CCD27FC02D300B4F7CA /* MyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49C6CCB27FC02D300B4F7CA /* MyTableViewCell.swift */; };
 		F49C6CCE27FC02D300B4F7CA /* MyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F49C6CCC27FC02D300B4F7CA /* MyTableViewCell.xib */; };
+		F4E978652808F8B2009D34AA /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = F4E978642808F8B2009D34AA /* Kingfisher */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +39,7 @@
 		F49C6CC827FBF56E00B4F7CA /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		F49C6CCB27FC02D300B4F7CA /* MyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTableViewCell.swift; sourceTree = "<group>"; };
 		F49C6CCC27FC02D300B4F7CA /* MyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyTableViewCell.xib; sourceTree = "<group>"; };
+		F4E978602808F8A0009D34AA /* InterfaceBuilderKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = InterfaceBuilderKit.framework; path = Library/Frameworks/InterfaceBuilderKit.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,7 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F42889F3280691CA00F55837 /* Kingfisher in Frameworks */,
+				F4E978652808F8B2009D34AA /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +75,7 @@
 			children = (
 				F49C6CAD27FBED5800B4F7CA /* PMx */,
 				F49C6CAC27FBED5800B4F7CA /* Products */,
+				F4E9785F2808F883009D34AA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -130,6 +132,14 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		F4E9785F2808F883009D34AA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F4E978602808F8A0009D34AA /* InterfaceBuilderKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -147,7 +157,7 @@
 			);
 			name = PMx;
 			packageProductDependencies = (
-				F42889F2280691CA00F55837 /* Kingfisher */,
+				F4E978642808F8B2009D34AA /* Kingfisher */,
 			);
 			productName = PMx;
 			productReference = F49C6CAB27FBED5800B4F7CA /* PMx.app */;
@@ -365,10 +375,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DD2C3FV6B6;
 				INFOPLIST_FILE = PMx/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				"OTHER_CODE_SIGN_FLAGS[sdk=*]" = "--generate-entitlement-der";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ramonfelix.PMx;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -384,10 +396,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DD2C3FV6B6;
 				INFOPLIST_FILE = PMx/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				"OTHER_CODE_SIGN_FLAGS[sdk=*]" = "--generate-entitlement-der";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ramonfelix.PMx;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -430,7 +444,7 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		F42889F2280691CA00F55837 /* Kingfisher */ = {
+		F4E978642808F8B2009D34AA /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F42889F1280691CA00F55837 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;

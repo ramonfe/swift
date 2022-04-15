@@ -15,11 +15,29 @@
                     <view key="view" contentMode="scaleToFill" id="ywi-gC-nP6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ckp-EX-ghK">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" id="MRU-Em-b28">
+                                <rect key="frame" x="0.0" y="426" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Mhg-Kv-xD9"/>
                         <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                        <constraints>
+                            <constraint firstItem="Mhg-Kv-xD9" firstAttribute="bottom" secondItem="ckp-EX-ghK" secondAttribute="bottom" id="HDM-Ly-CDo"/>
+                            <constraint firstItem="ckp-EX-ghK" firstAttribute="leading" secondItem="Mhg-Kv-xD9" secondAttribute="leading" id="IAJ-tA-77J"/>
+                            <constraint firstItem="ckp-EX-ghK" firstAttribute="top" secondItem="Mhg-Kv-xD9" secondAttribute="top" id="nbB-US-ghG"/>
+                            <constraint firstItem="Mhg-Kv-xD9" firstAttribute="trailing" secondItem="ckp-EX-ghK" secondAttribute="trailing" id="rVF-Va-Ipl"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Proximos Estrenos" id="B4R-od-qnd"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="MRU-Em-b28" id="i8c-bp-3Hv"/>
+                        <outlet property="myTableView" destination="ckp-EX-ghK" id="sT8-gp-A3f"/>
                         <segue destination="nm4-yS-hHP" kind="show" identifier="SegueProxDetail" id="1zp-Hk-Rz3"/>
                     </connections>
                 </viewController>
@@ -71,6 +89,10 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" id="59G-A8-wcI">
+                                <rect key="frame" x="0.0" y="426" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="g3e-o1-Sfv"/>
                         <color key="backgroundColor" systemColor="systemGreenColor"/>
@@ -83,6 +105,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="En Cartelera" id="TM5-FA-iZ9"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="59G-A8-wcI" id="bdx-kz-k9a"/>
                         <outlet property="tableView" destination="8mY-QG-aBx" id="VI6-SA-cJa"/>
                         <segue destination="nm4-yS-hHP" kind="show" identifier="SegueEstrenoDetail" id="e4y-N4-yhd"/>
                     </connections>

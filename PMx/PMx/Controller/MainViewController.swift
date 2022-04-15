@@ -6,30 +6,44 @@
 //
 
 import UIKit
+import Kingfisher
 
 class ViewController: UIViewController{
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     private var peliculas = [Peliculas]()
+    private var movieImgUrl=""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        showSpinner()
         tableView.dataSource=self
         tableView.delegate=self
         tableView.tableFooterView = UIView()
         tableView.register(UINib(nibName: "MyTableViewCell", bundle: nil), forCellReuseIdentifier: "mycustomcell")
-        
+       
         //carga json
-        NetworkProvider.shared.loadJson { (estrenos) in
+        NetworkProvider.shared.loadJsonEstrenos { (estrenos) in
             self.peliculas = estrenos.Estrenos
             DispatchQueue.main.async
             {
+                self.hideSpinner()
                 self.tableView.reloadData()
             }
         } failure: { (error) in
-            print(error)
+            self.hideSpinner()
+            print(error!)
         }
+    }
+    func showSpinner(){
+        activityIndicator.startAnimating()
+        activityIndicator.isHidden=false
+    }
+    func hideSpinner(){
+        activityIndicator.stopAnimating()
+        activityIndicator.isHidden=true
     }
 }
 
@@ -48,6 +62,12 @@ extension ViewController:UITableViewDataSource {
         cell?.actorsDescLabel.text = peliculas[indexPath.row].actor?.joined(separator: ",")
         cell?.dateFixLabel.text = "-"
         cell?.criticFixLabel.text = peliculas[indexPath.row].critics_score
+        movieImgUrl = peliculas[indexPath.row].image ?? ""
+        if (movieImgUrl == "/images/movie_poster-04.jpg" || movieImgUrl == "")
+        {
+            movieImgUrl = "https://cl.buscafs.com/www.tomatazos.com/public/uploads/images/334146/334146_140x200.jpg"
+        }
+        cell?.myImage.kf.setImage(with: URL(string: movieImgUrl))
         return cell!
     }
 }
