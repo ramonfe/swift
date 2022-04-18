@@ -46,6 +46,7 @@ class SecondViewController: UIViewController {
         activityIndicator.isHidden=true
     }
 }
+//MARK: UITableViewDelegate
 extension SecondViewController:UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         peliculas.count
@@ -68,8 +69,10 @@ extension SecondViewController:UITableViewDataSource{
         return cell!
     }    
 }
+//MARK: UITableViewDelegate
 extension SecondViewController:UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "SegueEstrenoDetail", sender: nil)
+        performSegue(withIdentifier: "SegueProxDetail", sender: nil)
     }
 }
+

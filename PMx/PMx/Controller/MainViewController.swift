@@ -10,7 +10,7 @@ import Kingfisher
 
 class ViewController: UIViewController{
     
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableView: UITableView!    
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     private var peliculas = [Peliculas]()
     private var movieImgUrl=""
@@ -75,6 +75,17 @@ extension ViewController:UITableViewDataSource {
 extension ViewController:UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "SegueEstrenoDetail", sender: nil)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? DetailMovieViewController{
+            //destination.pelicula = peliculas[0]
+            destination.titleMovie = ""
+            destination.rating = ""
+            destination.director = ""
+            destination.synopsis = ""
+            destination.actors = ""
+            destination.genre = ""
+        }
     }
 }
 
