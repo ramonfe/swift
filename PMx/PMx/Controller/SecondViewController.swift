@@ -13,6 +13,7 @@ class SecondViewController: UIViewController {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var myTableView: UITableView!
     private var peliculas = [Peliculas]()
+    private var peliculaSelected : Peliculas?
     private var movieImgUrl = ""
     
     override func viewDidLoad() {
@@ -70,9 +71,19 @@ extension SecondViewController:UITableViewDataSource{
     }    
 }
 //MARK: UITableViewDelegate
-extension SecondViewController:UITableViewDelegate{
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+extension SecondViewController:UITableViewDelegate
+{
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+    {
+        peliculaSelected = peliculas[indexPath.row]
         performSegue(withIdentifier: "SegueProxDetail", sender: nil)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if let destination = segue.destination as? DetailMovieViewController
+        {
+            destination.pelicula = peliculaSelected
+        }
     }
 }
 

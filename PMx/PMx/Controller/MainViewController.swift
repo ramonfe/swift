@@ -13,6 +13,7 @@ class ViewController: UIViewController{
     @IBOutlet weak var tableView: UITableView!    
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     private var peliculas = [Peliculas]()
+    private var peliculaSelected : Peliculas?
     private var movieImgUrl=""
     
     override func viewDidLoad() {
@@ -56,7 +57,8 @@ extension ViewController:UITableViewDataSource {
         return UITableView.automaticDimension
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    {
         let cell = tableView.dequeueReusableCell(withIdentifier: "mycustomcell", for: indexPath) as? MyTableViewCell
         cell?.titleLabel.text=peliculas[indexPath.row].title
         cell?.actorsDescLabel.text = peliculas[indexPath.row].actor?.joined(separator: ",")
@@ -72,19 +74,18 @@ extension ViewController:UITableViewDataSource {
     }
 }
 //MARK: UITableViewDelegate
-extension ViewController:UITableViewDelegate{
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+extension ViewController:UITableViewDelegate
+{
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+    {
+        peliculaSelected = peliculas[indexPath.row]
         performSegue(withIdentifier: "SegueEstrenoDetail", sender: nil)
     }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destination = segue.destination as? DetailMovieViewController{
-            //destination.pelicula = peliculas[0]
-            destination.titleMovie = ""
-            destination.rating = ""
-            destination.director = ""
-            destination.synopsis = ""
-            destination.actors = ""
-            destination.genre = ""
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if let destination = segue.destination as? DetailMovieViewController
+        {            
+            destination.pelicula = peliculaSelected
         }
     }
 }

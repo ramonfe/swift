@@ -162,6 +162,15 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ezV-uc-LIq"/>
+                    <connections>
+                        <outlet property="lblActors" destination="uok-Db-CQ5" id="oIy-em-XRp"/>
+                        <outlet property="lblDirector" destination="Afk-dO-ijs" id="za7-MN-3T0"/>
+                        <outlet property="lblGenre" destination="Qi5-pf-8V2" id="ixB-SL-42r"/>
+                        <outlet property="lblRate" destination="vM6-BR-Ygx" id="dNx-vj-sby"/>
+                        <outlet property="lblSynopsis" destination="RoC-N4-Czj" id="c5j-Xj-VLO"/>
+                        <outlet property="lblTitulo" destination="LVk-cQ-mzA" id="HHa-LV-shN"/>
+                        <outlet property="myImage" destination="IFq-YM-Mtn" id="puo-jZ-mQu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pt0-HL-zPn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
