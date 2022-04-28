@@ -16,6 +16,9 @@ class DetailMovieViewController: UIViewController {
     @IBOutlet weak var lblActors: UILabel!
     @IBOutlet weak var lblGenre: UILabel!
     @IBOutlet weak var myImage: UIImageView!
+    @IBOutlet weak var myScrollView: UIScrollView!
+    @IBOutlet weak var myMainView: UIView!
+    
     var pelicula : Peliculas?
     
     override func viewDidLoad() {
@@ -32,5 +35,24 @@ class DetailMovieViewController: UIViewController {
             movieImgUrl = "https://cl.buscafs.com/www.tomatazos.com/public/uploads/images/334146/334146_140x200.jpg"
         }
         myImage.kf.setImage(with: URL(string: movieImgUrl))
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        print(myMainView.frame.height)
+        //myScrollView.contentSize.height = myMainView.frame.height
+        //print(myScrollView.contentSize.height)
+        //print(myScrollView.contentSize.height)
+        var height: CGFloat
+        //let lastView = self.myScrollView.subviews[0].subviews.last!
+        
+        //let lastViewYPos = lastView.convert(lastView.frame.origin, to: nil).y
+        //let lastViewHeight = lastView.frame.size.height
+        
+        height =
+            lblSynopsis.frame.height + lblActors.frame.height + myImage.frame.height + lblActors.frame.height + lblGenre.frame.height + 140
+        
+        
+        myScrollView.contentSize.height = height
+        //print(lblSynopsis.frame.height)
+        print(height)
     }
 }
