@@ -59,9 +59,19 @@ extension ViewController:UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
+        var actorsReduced = ""
         let cell = tableView.dequeueReusableCell(withIdentifier: "mycustomcell", for: indexPath) as? MyTableViewCell
         cell?.titleLabel.text=peliculas[indexPath.row].title
-        cell?.actorsDescLabel.text = peliculas[indexPath.row].actor?.joined(separator: ",")
+        //validacion para que solo ponga 3 actores maximo
+        if let actorsArr = peliculas[indexPath.row].actor{
+            if peliculas[indexPath.row].actor!.count>2 {
+            actorsReduced = actorsArr[0..<3].joined(separator: ",")
+            }
+            else{
+                actorsReduced = actorsArr.joined(separator: ",")
+            }
+        }
+        cell?.actorsDescLabel.text = actorsReduced
         cell?.dateFixLabel.text = "-"
         cell?.criticFixLabel.text = peliculas[indexPath.row].critics_score
         movieImgUrl = peliculas[indexPath.row].image ?? ""

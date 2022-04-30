@@ -13,11 +13,11 @@
             <objects>
                 <viewController id="bp6-0i-Nap" customClass="SecondViewController" customModule="PMx" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ywi-gC-nP6">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ckp-EX-ghK">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" id="MRU-Em-b28">
@@ -26,7 +26,7 @@
                             </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Mhg-Kv-xD9"/>
-                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Mhg-Kv-xD9" firstAttribute="bottom" secondItem="ckp-EX-ghK" secondAttribute="bottom" id="HDM-Ly-CDo"/>
                             <constraint firstItem="ckp-EX-ghK" firstAttribute="leading" secondItem="Mhg-Kv-xD9" secondAttribute="leading" id="IAJ-tA-77J"/>
@@ -34,7 +34,7 @@
                             <constraint firstItem="Mhg-Kv-xD9" firstAttribute="trailing" secondItem="ckp-EX-ghK" secondAttribute="trailing" id="rVF-Va-Ipl"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Proximos Estrenos" id="B4R-od-qnd"/>
+                    <tabBarItem key="tabBarItem" title="Proximos Estrenos" image="film" catalog="system" id="B4R-od-qnd"/>
                     <connections>
                         <outlet property="activityIndicator" destination="MRU-Em-b28" id="hag-1c-wVg"/>
                         <outlet property="myTableView" destination="ckp-EX-ghK" id="sT8-gp-A3f"/>
@@ -50,11 +50,11 @@
             <objects>
                 <viewController id="nm4-yS-hHP" customClass="DetailMovieViewController" customModule="PMx" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CJI-CY-U2l">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EEM-5D-uIA">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q09-wr-PUn">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
@@ -207,9 +207,14 @@
         <scene sceneID="zTa-Tg-oEM">
             <objects>
                 <navigationController id="1xD-Hu-wG4" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="usi-9w-TTe">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="usi-9w-TTe">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.92549019607843142" green="0.23137254901960785" blue="0.23137254901960785" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="JbP-wu-TBD" kind="relationship" relationship="rootViewController" id="NDH-pj-mGH"/>
@@ -224,11 +229,11 @@
             <objects>
                 <viewController id="OJJ-bL-40i" customClass="ViewController" customModule="PMx" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1Rr-Cj-ZcF">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8mY-QG-aBx">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" id="59G-A8-wcI">
@@ -237,7 +242,8 @@
                             </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="g3e-o1-Sfv"/>
-                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="8mY-QG-aBx" firstAttribute="leading" secondItem="g3e-o1-Sfv" secondAttribute="leading" id="Ci8-E3-p1O"/>
                             <constraint firstItem="8mY-QG-aBx" firstAttribute="trailing" secondItem="g3e-o1-Sfv" secondAttribute="trailing" id="XEz-v2-XeU"/>
@@ -245,7 +251,7 @@
                             <constraint firstItem="8mY-QG-aBx" firstAttribute="top" secondItem="g3e-o1-Sfv" secondAttribute="top" id="typ-sp-a8P"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="En Cartelera" id="TM5-FA-iZ9"/>
+                    <tabBarItem key="tabBarItem" title="En Cartelera" image="film.fill" catalog="system" id="TM5-FA-iZ9"/>
                     <connections>
                         <outlet property="activityIndicator" destination="59G-A8-wcI" id="Q1q-8N-Dnt"/>
                         <outlet property="tableView" destination="8mY-QG-aBx" id="VI6-SA-cJa"/>
@@ -261,10 +267,12 @@
             <objects>
                 <tabBarController id="JbP-wu-TBD" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" title="Peliculas en Mexico" id="4Zb-WH-x1t"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Wpk-E9-N7q">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="Wpk-E9-N7q">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" red="0.92549019607843142" green="0.23137254901960785" blue="0.23137254901960785" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="OJJ-bL-40i" kind="relationship" relationship="viewControllers" id="f9W-YQ-48A"/>
@@ -279,7 +287,10 @@
     <inferredMetricsTieBreakers>
         <segue reference="e4y-N4-yhd"/>
     </inferredMetricsTieBreakers>
+    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
+        <image name="film" catalog="system" width="128" height="93"/>
+        <image name="film.fill" catalog="system" width="128" height="93"/>
         <systemColor name="secondaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
@@ -288,12 +299,6 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
