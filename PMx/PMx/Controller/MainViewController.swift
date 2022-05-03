@@ -72,7 +72,7 @@ extension ViewController:UITableViewDataSource {
             }
         }
         cell?.actorsDescLabel.text = actorsReduced
-        cell?.dateFixLabel.text = "-"
+        cell?.dateFixLabel.text = unixTime(fechaUnix: peliculas[indexPath.row].theater_release_date!)
         cell?.criticFixLabel.text = peliculas[indexPath.row].critics_score
         movieImgUrl = peliculas[indexPath.row].image ?? ""
         if (movieImgUrl == "/images/movie_poster-04.jpg" || movieImgUrl == "")

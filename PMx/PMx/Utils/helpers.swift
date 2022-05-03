@@ -16,3 +16,16 @@ extension URL {
         self = url
     }
 }
+
+func unixTime(fechaUnix: String? ) -> String{
+    var localDate = "-"
+    if let doubleDate = Double(fechaUnix!){
+        let date = Date(timeIntervalSince1970: doubleDate)
+        let dateFormater = DateFormatter()
+        dateFormater.dateStyle = DateFormatter.Style.medium
+        dateFormater.timeZone = .current
+        localDate = dateFormater.string(from: date)
+    }
+    return localDate
+}
+
