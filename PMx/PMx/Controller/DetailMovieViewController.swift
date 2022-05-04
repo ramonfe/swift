@@ -30,7 +30,7 @@ class DetailMovieViewController: UIViewController {
         lblSynopsis.text = pelicula?.synopsis
         lblActors.text = pelicula?.actor?.joined(separator: ",")
         lblGenre.text = pelicula?.genre?.joined(separator: ",")
-        lblEstreno.text = unixTime(fechaUnix: pelicula?.theater_release_date)
+        lblEstreno.text = unixTime(fechaUnix: pelicula?.mx_theater_release_date)
         
         var movieImgUrl = pelicula?.image ?? ""
         if (movieImgUrl == "/images/movie_poster-04.jpg" || movieImgUrl == "")

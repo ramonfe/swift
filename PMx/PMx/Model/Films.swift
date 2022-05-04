@@ -18,7 +18,7 @@ struct Peliculas:Decodable {
     let title:String?
     let image:String?
     var critics_score:String?=nil
-    var theater_release_date:String?=nil
+    var mx_theater_release_date:String?=nil
     let synopsis:String?
     let genre:[String]?
     let actor:[String]?
@@ -26,7 +26,7 @@ struct Peliculas:Decodable {
     var id_imdb:String?=nil
     
     private enum CodingKeys:String,CodingKey{
-        case title,image,theater_release_date,critics_score, synopsis,genre,actor,director,id_imdb }
+        case title,image,mx_theater_release_date,critics_score, synopsis,genre,actor,director,id_imdb }
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
@@ -36,8 +36,8 @@ struct Peliculas:Decodable {
         if let criticScore = try? container.decode(String.self, forKey: .critics_score) {
             self.critics_score = criticScore
         }
-        if let releaseDate = try? container.decode(String.self, forKey: .theater_release_date) {
-            self.theater_release_date = releaseDate
+        if let releaseDate = try? container.decode(String.self, forKey: .mx_theater_release_date) {
+            self.mx_theater_release_date = releaseDate
         }
         self.synopsis = try container.decode(String.self, forKey: .synopsis)
         if let genero = try? container.decode(String.self, forKey: .genre){
