@@ -1,1 +1,3 @@
-actorslabel = "Actors";
+actorslabel = "Cast:";
+datelabel = "Release Date:";
+criticlabel = "Rate:";

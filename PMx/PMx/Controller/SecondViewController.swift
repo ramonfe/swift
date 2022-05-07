@@ -7,9 +7,12 @@
 
 import UIKit
 import Kingfisher
+import GoogleMobileAds
+import FirebaseAnalytics
 
 class SecondViewController: UIViewController {
     
+    @IBOutlet weak var bannerView: GADBannerView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var myTableView: UITableView!
     private var peliculas = [Peliculas]()
@@ -18,13 +21,21 @@ class SecondViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        loadBanner()
+        sendFirebaseLog()
         showSpinner()
         myTableView.dataSource=self
         myTableView.delegate=self
         myTableView.tableFooterView = UIView()
         myTableView.register(UINib(nibName: "MyTableViewCell", bundle: nil), forCellReuseIdentifier: "mycustomcell")
         
+        loadJsonInTable()
+    }
+    func sendFirebaseLog(){
+        // Analu¡ytic event.
+        Analytics.logEvent("second screen", parameters: ["message" : "integracion Ready"])
+    }
+    func loadJsonInTable(){
         //carga json
         NetworkProvider.shared.loadJsonProxEstrenos{ (estrenos) in
             self.peliculas = estrenos.ProximosEstrenos
@@ -34,9 +45,15 @@ class SecondViewController: UIViewController {
                 self.myTableView.reloadData()
             }
         } failure: { (error) in
-            self.hideSpinner()
-            print(error)
+            self.hideSpinner()           
         }
+    }
+    func loadBanner(){
+        bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"//"ca-app-pub-6687064215304616/1359059372"
+        bannerView.rootViewController = self//ca-app-pub-3940256099942544/2934735716
+        bannerView.load(GADRequest())
+        
+        bannerView.delegate = self
     }
     func showSpinner(){
         activityIndicator.startAnimating()
@@ -45,6 +62,32 @@ class SecondViewController: UIViewController {
     func hideSpinner(){
         activityIndicator.stopAnimating()
         activityIndicator.isHidden=true
+    }
+}
+//MARK: GADBannerViewDelegate
+extension SecondViewController:GADBannerViewDelegate{
+    func bannerViewDidReceiveAd(_ bannerView: GADBannerView) {
+        print("bannerViewDidReceiveAd")
+    }
+    
+    func bannerView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: Error) {
+        print("bannerView:didFailToReceiveAdWithError: \(error.localizedDescription)")
+    }
+    
+    func bannerViewDidRecordImpression(_ bannerView: GADBannerView) {
+        print("bannerViewDidRecordImpression")
+    }
+    
+    func bannerViewWillPresentScreen(_ bannerView: GADBannerView) {
+        print("bannerViewWillPresentScreen")
+    }
+    
+    func bannerViewWillDismissScreen(_ bannerView: GADBannerView) {
+        print("bannerViewWillDIsmissScreen")
+    }
+    
+    func bannerViewDidDismissScreen(_ bannerView: GADBannerView) {
+        print("bannerViewDidDismissScreen")
     }
 }
 //MARK: UITableViewDelegate
@@ -62,15 +105,15 @@ extension SecondViewController:UITableViewDataSource{
         //validacion para que solo ponga 3 actores maximo
         if let actorsArr = peliculas[indexPath.row].actor{
             if peliculas[indexPath.row].actor!.count>2 {
-            actorsReduced = actorsArr[0..<3].joined(separator: ",")
+                actorsReduced = actorsArr[0..<3].joined(separator: ",")
             }
             else{
                 actorsReduced = actorsArr.joined(separator: ",")
             }
         }
         cell?.actorsDescLabel.text = actorsReduced
-        cell?.dateFixLabel.text = unixTime(fechaUnix: peliculas[indexPath.row].mx_theater_release_date!)
-        cell?.criticFixLabel.text = peliculas[indexPath.row].critics_score
+        cell?.dateLabel.text = unixTime(fechaUnix: peliculas[indexPath.row].mx_theater_release_date!)
+        cell?.criticLabel.text = peliculas[indexPath.row].critics_score
         movieImgUrl = peliculas[indexPath.row].image ?? ""
         if (movieImgUrl == "/images/movie_poster-04.jpg" || movieImgUrl == "")
         {

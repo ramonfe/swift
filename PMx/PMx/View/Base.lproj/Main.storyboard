@@ -16,34 +16,44 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ckp-EX-ghK">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ckp-EX-ghK">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" id="MRU-Em-b28">
-                                <rect key="frame" x="0.0" y="426" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" insetsLayoutMarginsFromSafeArea="NO" style="large" id="MRU-Em-b28">
+                                <rect key="frame" x="0.0" y="340" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                             </activityIndicatorView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O8A-Il-ph6" customClass="GADBannerView">
+                                <rect key="frame" x="0.0" y="675" width="414" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="XUx-a2-Zjf"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Mhg-Kv-xD9"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Mhg-Kv-xD9" firstAttribute="bottom" secondItem="ckp-EX-ghK" secondAttribute="bottom" id="HDM-Ly-CDo"/>
-                            <constraint firstItem="ckp-EX-ghK" firstAttribute="leading" secondItem="Mhg-Kv-xD9" secondAttribute="leading" id="IAJ-tA-77J"/>
-                            <constraint firstItem="ckp-EX-ghK" firstAttribute="top" secondItem="Mhg-Kv-xD9" secondAttribute="top" id="nbB-US-ghG"/>
-                            <constraint firstItem="Mhg-Kv-xD9" firstAttribute="trailing" secondItem="ckp-EX-ghK" secondAttribute="trailing" id="rVF-Va-Ipl"/>
+                            <constraint firstItem="Mhg-Kv-xD9" firstAttribute="bottom" secondItem="O8A-Il-ph6" secondAttribute="bottom" id="0jv-4I-6yc"/>
+                            <constraint firstItem="O8A-Il-ph6" firstAttribute="centerX" secondItem="ywi-gC-nP6" secondAttribute="centerX" id="1bN-WW-dOR"/>
+                            <constraint firstItem="O8A-Il-ph6" firstAttribute="leading" secondItem="Mhg-Kv-xD9" secondAttribute="leading" id="ICJ-UG-EJh"/>
+                            <constraint firstItem="O8A-Il-ph6" firstAttribute="trailing" secondItem="Mhg-Kv-xD9" secondAttribute="trailing" id="IVx-xb-QcX"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Coming Soon" image="film" catalog="system" id="B4R-od-qnd"/>
                     <connections>
                         <outlet property="activityIndicator" destination="MRU-Em-b28" id="hag-1c-wVg"/>
+                        <outlet property="bannerView" destination="O8A-Il-ph6" id="7lL-Pu-Wtf"/>
                         <outlet property="myTableView" destination="ckp-EX-ghK" id="sT8-gp-A3f"/>
                         <segue destination="nm4-yS-hHP" kind="show" identifier="SegueProxDetail" id="1zp-Hk-Rz3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s1a-Vv-zrT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1429" y="417"/>
+            <point key="canvasLocation" x="1428.985507246377" y="416.51785714285711"/>
         </scene>
         <!--Detail Movie View Controller-->
         <scene sceneID="OGZ-mu-30j">
@@ -222,6 +232,28 @@
             </objects>
             <point key="canvasLocation" x="2407.2463768115945" y="-153.34821428571428"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="B63-0S-RTc">
+            <objects>
+                <viewController id="Lmp-Rr-tjp" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qLC-VA-YCY">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AgZ-ci-vwc">
+                                <rect key="frame" x="69" y="278" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="QqR-kk-PkM"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oz2-Ik-C0k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3524" y="-186"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="zTa-Tg-oEM">
             <objects>
@@ -255,24 +287,37 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" id="59G-A8-wcI">
-                                <rect key="frame" x="0.0" y="426" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ReZ-Ws-m8b" customClass="GADBannerView">
+                                <rect key="frame" x="0.0" y="675" width="414" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="4rU-Sx-LAp"/>
+                                </constraints>
+                            </view>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" insetsLayoutMarginsFromSafeArea="NO" style="large" id="59G-A8-wcI">
+                                <rect key="frame" x="0.0" y="360" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                             </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="g3e-o1-Sfv"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="8mY-QG-aBx" firstAttribute="leading" secondItem="g3e-o1-Sfv" secondAttribute="leading" id="Ci8-E3-p1O"/>
-                            <constraint firstItem="8mY-QG-aBx" firstAttribute="trailing" secondItem="g3e-o1-Sfv" secondAttribute="trailing" id="XEz-v2-XeU"/>
-                            <constraint firstItem="g3e-o1-Sfv" firstAttribute="bottom" secondItem="8mY-QG-aBx" secondAttribute="bottom" id="lbZ-EM-ajZ"/>
-                            <constraint firstItem="8mY-QG-aBx" firstAttribute="top" secondItem="g3e-o1-Sfv" secondAttribute="top" id="typ-sp-a8P"/>
+                            <constraint firstItem="ReZ-Ws-m8b" firstAttribute="leading" secondItem="g3e-o1-Sfv" secondAttribute="leading" id="Au8-6i-Vnx"/>
+                            <constraint firstItem="8mY-QG-aBx" firstAttribute="trailing" secondItem="g3e-o1-Sfv" secondAttribute="trailing" id="Eab-Z6-38F"/>
+                            <constraint firstItem="ReZ-Ws-m8b" firstAttribute="trailing" secondItem="g3e-o1-Sfv" secondAttribute="trailing" id="SXT-82-Ywa"/>
+                            <constraint firstItem="ReZ-Ws-m8b" firstAttribute="centerX" secondItem="1Rr-Cj-ZcF" secondAttribute="centerX" id="aKp-8R-26e"/>
+                            <constraint firstItem="ReZ-Ws-m8b" firstAttribute="bottom" secondItem="g3e-o1-Sfv" secondAttribute="bottom" id="alx-MG-wEo"/>
+                            <constraint firstItem="8mY-QG-aBx" firstAttribute="top" secondItem="g3e-o1-Sfv" secondAttribute="top" id="lKq-Ca-rWn"/>
+                            <constraint firstItem="8mY-QG-aBx" firstAttribute="bottom" secondItem="g3e-o1-Sfv" secondAttribute="bottom" id="qer-WF-x0m"/>
+                            <constraint firstItem="8mY-QG-aBx" firstAttribute="leading" secondItem="g3e-o1-Sfv" secondAttribute="leading" id="vao-bT-Xe4"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="In Theaters" image="film.fill" catalog="system" id="TM5-FA-iZ9"/>
                     <connections>
                         <outlet property="activityIndicator" destination="59G-A8-wcI" id="Q1q-8N-Dnt"/>
+                        <outlet property="bannerView" destination="ReZ-Ws-m8b" id="ED2-I2-6VB"/>
                         <outlet property="tableView" destination="8mY-QG-aBx" id="VI6-SA-cJa"/>
                         <segue destination="nm4-yS-hHP" kind="show" identifier="SegueEstrenoDetail" id="e4y-N4-yhd"/>
                     </connections>

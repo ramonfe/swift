@@ -7,24 +7,35 @@
 
 import UIKit
 import Kingfisher
+import GoogleMobileAds
+import FirebaseAnalytics
 
 class ViewController: UIViewController{
     
-    @IBOutlet weak var tableView: UITableView!    
+    @IBOutlet weak var bannerView: GADBannerView!
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     private var peliculas = [Peliculas]()
     private var peliculaSelected : Peliculas?
-    private var movieImgUrl=""
+    private var movieImgUrl=""    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        loadBanner()
+        sendFirebaseLog()
         showSpinner()
         tableView.dataSource=self
         tableView.delegate=self
         tableView.tableFooterView = UIView()
         tableView.register(UINib(nibName: "MyTableViewCell", bundle: nil), forCellReuseIdentifier: "mycustomcell")
-       
+        
+        loadJsonInTable()
+    }
+    func sendFirebaseLog(){
+        // Analu¡ytic event.
+        Analytics.logEvent("init screen", parameters: ["message" : "integracion Ready"])
+    }
+    func loadJsonInTable(){
         //carga json
         NetworkProvider.shared.loadJsonEstrenos { (estrenos) in
             self.peliculas = estrenos.Estrenos
@@ -34,17 +45,50 @@ class ViewController: UIViewController{
                 self.tableView.reloadData()
             }
         } failure: { (error) in
-            self.hideSpinner()
-            print(error!)
+            self.hideSpinner()            
         }
+    }
+    func loadBanner(){
+        bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"//"ca-app-pub-6687064215304616/1359059372"
+        bannerView.rootViewController = self//ca-app-pub-3940256099942544/2934735716
+        bannerView.load(GADRequest())
+        
+        bannerView.delegate = self
     }
     func showSpinner(){
         activityIndicator.startAnimating()
         activityIndicator.isHidden=false
     }
     func hideSpinner(){
+        
         activityIndicator.stopAnimating()
         activityIndicator.isHidden=true
+    }
+}
+//MARK: GADBannerViewDelegate
+extension ViewController:GADBannerViewDelegate{
+    func bannerViewDidReceiveAd(_ bannerView: GADBannerView) {
+        print("bannerViewDidReceiveAd")
+    }
+    
+    func bannerView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: Error) {
+        print("bannerView:didFailToReceiveAdWithError: \(error.localizedDescription)")
+    }
+    
+    func bannerViewDidRecordImpression(_ bannerView: GADBannerView) {
+        print("bannerViewDidRecordImpression")
+    }
+    
+    func bannerViewWillPresentScreen(_ bannerView: GADBannerView) {
+        print("bannerViewWillPresentScreen")
+    }
+    
+    func bannerViewWillDismissScreen(_ bannerView: GADBannerView) {
+        print("bannerViewWillDIsmissScreen")
+    }
+    
+    func bannerViewDidDismissScreen(_ bannerView: GADBannerView) {
+        print("bannerViewDidDismissScreen")
     }
 }
 
@@ -65,15 +109,15 @@ extension ViewController:UITableViewDataSource {
         //validacion para que solo ponga 3 actores maximo
         if let actorsArr = peliculas[indexPath.row].actor{
             if peliculas[indexPath.row].actor!.count>2 {
-            actorsReduced = actorsArr[0..<3].joined(separator: ",")
+                actorsReduced = actorsArr[0..<3].joined(separator: ",")
             }
             else{
                 actorsReduced = actorsArr.joined(separator: ",")
             }
         }
         cell?.actorsDescLabel.text = actorsReduced
-        cell?.dateFixLabel.text = unixTime(fechaUnix: peliculas[indexPath.row].mx_theater_release_date!)
-        cell?.criticFixLabel.text = peliculas[indexPath.row].critics_score
+        cell?.dateLabel.text = unixTime(fechaUnix: peliculas[indexPath.row].mx_theater_release_date!)
+        cell?.criticLabel.text = peliculas[indexPath.row].critics_score
         movieImgUrl = peliculas[indexPath.row].image ?? ""
         if (movieImgUrl == "/images/movie_poster-04.jpg" || movieImgUrl == "")
         {

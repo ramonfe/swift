@@ -12,6 +12,16 @@
 		F44A280E27FFF832009B786E /* helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44A280D27FFF832009B786E /* helpers.swift */; };
 		F470CD8B282239C40017606A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F470CD8D282239C40017606A /* Localizable.strings */; };
 		F4781733280CC32A00497E8E /* DetailMovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4781732280CC32A00497E8E /* DetailMovieViewController.swift */; };
+		F48668D128262A400006EDFB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F48668D028262A400006EDFB /* GoogleService-Info.plist */; };
+		F48668D52826302F0006EDFB /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = F48668D42826302F0006EDFB /* FirebaseAnalytics */; };
+		F48668E02826368E0006EDFB /* Licenses in Resources */ = {isa = PBXBuildFile; fileRef = F48668D8282636850006EDFB /* Licenses */; };
+		F48668EA2826573C0006EDFB /* GoogleAppMeasurement.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = F48668DC282636890006EDFB /* GoogleAppMeasurement.xcframework */; };
+		F48668ED282657440006EDFB /* GoogleAppMeasurementIdentitySupport.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = F48668DB282636870006EDFB /* GoogleAppMeasurementIdentitySupport.xcframework */; };
+		F48668EF282657480006EDFB /* GoogleMobileAds.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = F48668DE2826368E0006EDFB /* GoogleMobileAds.xcframework */; };
+		F48668F12826574A0006EDFB /* GoogleUtilities.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = F48668DD2826368A0006EDFB /* GoogleUtilities.xcframework */; };
+		F48668F32826574C0006EDFB /* nanopb.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = F48668D7282636840006EDFB /* nanopb.xcframework */; };
+		F48668F52826574E0006EDFB /* PromisesObjC.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = F48668DA282636860006EDFB /* PromisesObjC.xcframework */; };
+		F48668F7282657500006EDFB /* UserMessagingPlatform.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = F48668D9282636850006EDFB /* UserMessagingPlatform.xcframework */; };
 		F49C6CAF27FBED5800B4F7CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49C6CAE27FBED5800B4F7CA /* AppDelegate.swift */; };
 		F49C6CB127FBED5800B4F7CA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49C6CB027FBED5800B4F7CA /* SceneDelegate.swift */; };
 		F49C6CB327FBED5800B4F7CA /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49C6CB227FBED5800B4F7CA /* MainViewController.swift */; };
@@ -35,6 +45,15 @@
 		F470CD8E28223A130017606A /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F470CD8F28223A170017606A /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		F4781732280CC32A00497E8E /* DetailMovieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMovieViewController.swift; sourceTree = "<group>"; };
+		F48668D028262A400006EDFB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F48668D7282636840006EDFB /* nanopb.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = nanopb.xcframework; sourceTree = "<group>"; };
+		F48668D8282636850006EDFB /* Licenses */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Licenses; sourceTree = "<group>"; };
+		F48668D9282636850006EDFB /* UserMessagingPlatform.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = UserMessagingPlatform.xcframework; sourceTree = "<group>"; };
+		F48668DA282636860006EDFB /* PromisesObjC.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = PromisesObjC.xcframework; sourceTree = "<group>"; };
+		F48668DB282636870006EDFB /* GoogleAppMeasurementIdentitySupport.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = GoogleAppMeasurementIdentitySupport.xcframework; sourceTree = "<group>"; };
+		F48668DC282636890006EDFB /* GoogleAppMeasurement.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = GoogleAppMeasurement.xcframework; sourceTree = "<group>"; };
+		F48668DD2826368A0006EDFB /* GoogleUtilities.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = GoogleUtilities.xcframework; sourceTree = "<group>"; };
+		F48668DE2826368E0006EDFB /* GoogleMobileAds.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = GoogleMobileAds.xcframework; sourceTree = "<group>"; };
 		F49C6CAB27FBED5800B4F7CA /* PMx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PMx.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F49C6CAE27FBED5800B4F7CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F49C6CB027FBED5800B4F7CA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,7 +74,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F48668F52826574E0006EDFB /* PromisesObjC.xcframework in Frameworks */,
+				F48668EA2826573C0006EDFB /* GoogleAppMeasurement.xcframework in Frameworks */,
+				F48668D52826302F0006EDFB /* FirebaseAnalytics in Frameworks */,
+				F48668ED282657440006EDFB /* GoogleAppMeasurementIdentitySupport.xcframework in Frameworks */,
+				F48668F12826574A0006EDFB /* GoogleUtilities.xcframework in Frameworks */,
 				F4E978652808F8B2009D34AA /* Kingfisher in Frameworks */,
+				F48668F32826574C0006EDFB /* nanopb.xcframework in Frameworks */,
+				F48668F7282657500006EDFB /* UserMessagingPlatform.xcframework in Frameworks */,
+				F48668EF282657480006EDFB /* GoogleMobileAds.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,6 +134,7 @@
 				F49C6CB027FBED5800B4F7CA /* SceneDelegate.swift */,
 				F49C6CB727FBED5A00B4F7CA /* Assets.xcassets */,
 				F49C6CBC27FBED5A00B4F7CA /* Info.plist */,
+				F48668D028262A400006EDFB /* GoogleService-Info.plist */,
 				F49C6CC327FBEF9800B4F7CA /* MyCollectionViewController.swift */,
 				F470CD8D282239C40017606A /* Localizable.strings */,
 			);
@@ -145,6 +173,14 @@
 		F4E9785F2808F883009D34AA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F48668DC282636890006EDFB /* GoogleAppMeasurement.xcframework */,
+				F48668DB282636870006EDFB /* GoogleAppMeasurementIdentitySupport.xcframework */,
+				F48668DE2826368E0006EDFB /* GoogleMobileAds.xcframework */,
+				F48668DD2826368A0006EDFB /* GoogleUtilities.xcframework */,
+				F48668D8282636850006EDFB /* Licenses */,
+				F48668D7282636840006EDFB /* nanopb.xcframework */,
+				F48668DA282636860006EDFB /* PromisesObjC.xcframework */,
+				F48668D9282636850006EDFB /* UserMessagingPlatform.xcframework */,
 				F4E978602808F8A0009D34AA /* InterfaceBuilderKit.framework */,
 			);
 			name = Frameworks;
@@ -168,6 +204,7 @@
 			name = PMx;
 			packageProductDependencies = (
 				F4E978642808F8B2009D34AA /* Kingfisher */,
+				F48668D42826302F0006EDFB /* FirebaseAnalytics */,
 			);
 			productName = PMx;
 			productReference = F49C6CAB27FBED5800B4F7CA /* PMx.app */;
@@ -200,6 +237,7 @@
 			mainGroup = F49C6CA227FBED5800B4F7CA;
 			packageReferences = (
 				F42889F1280691CA00F55837 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				F48668D32826302E0006EDFB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = F49C6CAC27FBED5800B4F7CA /* Products */;
 			projectDirPath = "";
@@ -217,7 +255,9 @@
 			files = (
 				F470CD8B282239C40017606A /* Localizable.strings in Resources */,
 				F49C6CBB27FBED5A00B4F7CA /* LaunchScreen.storyboard in Resources */,
+				F48668D128262A400006EDFB /* GoogleService-Info.plist in Resources */,
 				F49C6CCE27FC02D300B4F7CA /* MyTableViewCell.xib in Resources */,
+				F48668E02826368E0006EDFB /* Licenses in Resources */,
 				F49C6CB827FBED5A00B4F7CA /* Assets.xcassets in Resources */,
 				F49C6CB627FBED5800B4F7CA /* Main.storyboard in Resources */,
 			);
@@ -408,8 +448,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_CODE_SIGN_FLAGS = "--generate-entitlement-der";
 				"OTHER_CODE_SIGN_FLAGS[sdk=*]" = "--generate-entitlement-der";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ramonfelix.PMx;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ramonfelix.pmx;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -429,8 +470,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_CODE_SIGN_FLAGS = "--generate-entitlement-der";
 				"OTHER_CODE_SIGN_FLAGS[sdk=*]" = "--generate-entitlement-der";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ramonfelix.PMx;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ramonfelix.pmx;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -469,9 +511,22 @@
 				minimumVersion = 7.2.1;
 			};
 		};
+		F48668D32826302E0006EDFB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		F48668D42826302F0006EDFB /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F48668D32826302E0006EDFB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
 		F4E978642808F8B2009D34AA /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F42889F1280691CA00F55837 /* XCRemoteSwiftPackageReference "Kingfisher" */;
