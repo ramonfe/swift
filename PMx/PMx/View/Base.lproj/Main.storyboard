@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1xD-Hu-wG4">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -16,21 +17,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ckp-EX-ghK">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ckp-EX-ghK">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" insetsLayoutMarginsFromSafeArea="NO" style="large" id="MRU-Em-b28">
-                                <rect key="frame" x="0.0" y="340" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" insetsLayoutMarginsFromSafeArea="NO" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="MRU-Em-b28">
+                                <rect key="frame" x="188.5" y="344" width="37" height="37"/>
                                 <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                             </activityIndicatorView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O8A-Il-ph6" customClass="GADBannerView">
-                                <rect key="frame" x="0.0" y="675" width="414" height="50"/>
+                                <rect key="frame" x="0.0" y="625" width="414" height="100"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="XUx-a2-Zjf"/>
+                                    <constraint firstAttribute="height" constant="100" id="XUx-a2-Zjf">
+                                        <variation key="heightClass=compact" constant="50"/>
+                                    </constraint>
                                 </constraints>
                             </view>
                         </subviews>
@@ -39,8 +40,14 @@
                         <constraints>
                             <constraint firstItem="Mhg-Kv-xD9" firstAttribute="bottom" secondItem="O8A-Il-ph6" secondAttribute="bottom" id="0jv-4I-6yc"/>
                             <constraint firstItem="O8A-Il-ph6" firstAttribute="centerX" secondItem="ywi-gC-nP6" secondAttribute="centerX" id="1bN-WW-dOR"/>
+                            <constraint firstItem="ckp-EX-ghK" firstAttribute="top" secondItem="Mhg-Kv-xD9" secondAttribute="top" id="Eup-ln-854"/>
                             <constraint firstItem="O8A-Il-ph6" firstAttribute="leading" secondItem="Mhg-Kv-xD9" secondAttribute="leading" id="ICJ-UG-EJh"/>
                             <constraint firstItem="O8A-Il-ph6" firstAttribute="trailing" secondItem="Mhg-Kv-xD9" secondAttribute="trailing" id="IVx-xb-QcX"/>
+                            <constraint firstItem="ckp-EX-ghK" firstAttribute="leading" secondItem="ywi-gC-nP6" secondAttribute="leading" id="RDd-N6-FWw"/>
+                            <constraint firstItem="Mhg-Kv-xD9" firstAttribute="trailing" secondItem="ckp-EX-ghK" secondAttribute="trailing" id="TVr-0c-WKI"/>
+                            <constraint firstItem="MRU-Em-b28" firstAttribute="centerX" secondItem="ywi-gC-nP6" secondAttribute="centerX" id="WQg-yH-77O"/>
+                            <constraint firstItem="MRU-Em-b28" firstAttribute="centerY" secondItem="ywi-gC-nP6" secondAttribute="centerY" id="g1t-3b-Ca2"/>
+                            <constraint firstAttribute="bottom" secondItem="ckp-EX-ghK" secondAttribute="bottom" id="kt6-l6-8u0"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Coming Soon" image="film" catalog="system" id="B4R-od-qnd"/>
@@ -288,15 +295,16 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ReZ-Ws-m8b" customClass="GADBannerView">
-                                <rect key="frame" x="0.0" y="675" width="414" height="50"/>
+                                <rect key="frame" x="0.0" y="625" width="414" height="100"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="4rU-Sx-LAp"/>
+                                    <constraint firstAttribute="height" constant="100" id="4rU-Sx-LAp">
+                                        <variation key="heightClass=compact" constant="50"/>
+                                    </constraint>
                                 </constraints>
                             </view>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" insetsLayoutMarginsFromSafeArea="NO" style="large" id="59G-A8-wcI">
-                                <rect key="frame" x="0.0" y="360" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" insetsLayoutMarginsFromSafeArea="NO" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="59G-A8-wcI">
+                                <rect key="frame" x="188.5" y="344" width="37" height="37"/>
                                 <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                             </activityIndicatorView>
                         </subviews>
@@ -304,11 +312,13 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="59G-A8-wcI" firstAttribute="centerY" secondItem="1Rr-Cj-ZcF" secondAttribute="centerY" id="2W3-U9-c2k"/>
                             <constraint firstItem="ReZ-Ws-m8b" firstAttribute="leading" secondItem="g3e-o1-Sfv" secondAttribute="leading" id="Au8-6i-Vnx"/>
                             <constraint firstItem="8mY-QG-aBx" firstAttribute="trailing" secondItem="g3e-o1-Sfv" secondAttribute="trailing" id="Eab-Z6-38F"/>
                             <constraint firstItem="ReZ-Ws-m8b" firstAttribute="trailing" secondItem="g3e-o1-Sfv" secondAttribute="trailing" id="SXT-82-Ywa"/>
                             <constraint firstItem="ReZ-Ws-m8b" firstAttribute="centerX" secondItem="1Rr-Cj-ZcF" secondAttribute="centerX" id="aKp-8R-26e"/>
                             <constraint firstItem="ReZ-Ws-m8b" firstAttribute="bottom" secondItem="g3e-o1-Sfv" secondAttribute="bottom" id="alx-MG-wEo"/>
+                            <constraint firstItem="59G-A8-wcI" firstAttribute="centerX" secondItem="1Rr-Cj-ZcF" secondAttribute="centerX" id="iiW-JK-P4n"/>
                             <constraint firstItem="8mY-QG-aBx" firstAttribute="top" secondItem="g3e-o1-Sfv" secondAttribute="top" id="lKq-Ca-rWn"/>
                             <constraint firstItem="8mY-QG-aBx" firstAttribute="bottom" secondItem="g3e-o1-Sfv" secondAttribute="bottom" id="qer-WF-x0m"/>
                             <constraint firstItem="8mY-QG-aBx" firstAttribute="leading" secondItem="g3e-o1-Sfv" secondAttribute="leading" id="vao-bT-Xe4"/>
