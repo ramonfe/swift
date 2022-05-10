@@ -160,7 +160,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="bgf-VX-oVi" firstAttribute="leading" secondItem="IFq-YM-Mtn" secondAttribute="trailing" constant="10" id="0va-j5-7b7"/>
                                             <constraint firstItem="LVk-cQ-mzA" firstAttribute="top" secondItem="Q09-wr-PUn" secondAttribute="top" constant="10" id="3QC-ZQ-pMj"/>
@@ -211,18 +211,31 @@
                                     <constraint firstItem="Q09-wr-PUn" firstAttribute="centerY" secondItem="EEM-5D-uIA" secondAttribute="centerY" id="pzH-ZC-h7e"/>
                                 </constraints>
                             </scrollView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ky2-9F-wpK" customClass="GADBannerView">
+                                <rect key="frame" x="0.0" y="674" width="414" height="100"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="MwT-6z-5hO">
+                                        <variation key="heightClass=compact" constant="50"/>
+                                    </constraint>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="M3z-4v-361"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="M3z-4v-361" firstAttribute="bottom" secondItem="Ky2-9F-wpK" secondAttribute="bottom" id="70m-ju-7ic"/>
                             <constraint firstItem="EEM-5D-uIA" firstAttribute="leading" secondItem="M3z-4v-361" secondAttribute="leading" id="Agi-B8-8v8"/>
                             <constraint firstItem="EEM-5D-uIA" firstAttribute="top" secondItem="M3z-4v-361" secondAttribute="top" id="Dsh-Sl-RHS"/>
+                            <constraint firstItem="Ky2-9F-wpK" firstAttribute="leading" secondItem="M3z-4v-361" secondAttribute="leading" id="UqX-7o-XJl"/>
                             <constraint firstItem="M3z-4v-361" firstAttribute="trailing" secondItem="EEM-5D-uIA" secondAttribute="trailing" id="d7h-Gc-RxV"/>
+                            <constraint firstItem="Ky2-9F-wpK" firstAttribute="trailing" secondItem="M3z-4v-361" secondAttribute="trailing" id="k6z-uh-OS5"/>
                             <constraint firstItem="EEM-5D-uIA" firstAttribute="bottom" secondItem="M3z-4v-361" secondAttribute="bottom" id="lBY-Oa-fdt"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ezV-uc-LIq"/>
                     <connections>
+                        <outlet property="bannerView" destination="Ky2-9F-wpK" id="5Ln-uJ-ZaX"/>
                         <outlet property="lblActors" destination="uok-Db-CQ5" id="oIy-em-XRp"/>
                         <outlet property="lblDirector" destination="Afk-dO-ijs" id="za7-MN-3T0"/>
                         <outlet property="lblEstreno" destination="RJy-Jt-Q2i" id="oMp-rQ-4um"/>
@@ -238,28 +251,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pt0-HL-zPn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2407.2463768115945" y="-153.34821428571428"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="B63-0S-RTc">
-            <objects>
-                <viewController id="Lmp-Rr-tjp" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="qLC-VA-YCY">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AgZ-ci-vwc">
-                                <rect key="frame" x="69" y="278" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </view>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="QqR-kk-PkM"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="oz2-Ik-C0k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3524" y="-186"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="zTa-Tg-oEM">
@@ -367,9 +358,6 @@
         <image name="film.fill" catalog="system" width="128" height="93"/>
         <systemColor name="secondaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="secondarySystemBackgroundColor">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

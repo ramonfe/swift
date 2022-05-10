@@ -7,6 +7,7 @@
 
 import UIKit
 import Kingfisher
+import GoogleMobileAds
 
 class DetailMovieViewController: UIViewController {
     @IBOutlet weak var lblTitulo: UILabel!
@@ -19,11 +20,15 @@ class DetailMovieViewController: UIViewController {
     @IBOutlet weak var myScrollView: UIScrollView!
     @IBOutlet weak var myMainView: UIView!
     @IBOutlet weak var lblEstreno: UILabel!
+    @IBOutlet weak var bannerView: GADBannerView!
     
     var pelicula : Peliculas?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        bannerView.rootViewController = self
+        
         lblTitulo.text = pelicula?.title
         lblRate.text = pelicula?.critics_score
         lblDirector.text = pelicula?.director?.joined(separator: ",")
@@ -40,22 +45,34 @@ class DetailMovieViewController: UIViewController {
         myImage.kf.setImage(with: URL(string: movieImgUrl))
     }
     override func viewDidAppear(_ animated: Bool) {
-        print(myMainView.frame.height)
-        //myScrollView.contentSize.height = myMainView.frame.height
-        //print(myScrollView.contentSize.height)
-        //print(myScrollView.contentSize.height)
         var height: CGFloat
-        //let lastView = self.myScrollView.subviews[0].subviews.last!
-        
-        //let lastViewYPos = lastView.convert(lastView.frame.origin, to: nil).y
-        //let lastViewHeight = lastView.frame.size.height
-        
         height =
-            lblSynopsis.frame.height + lblActors.frame.height + myImage.frame.height + lblActors.frame.height + lblGenre.frame.height + 140
+            lblSynopsis.frame.height + lblActors.frame.height + myImage.frame.height + lblActors.frame.height + lblGenre.frame.height + 240
         
         
         myScrollView.contentSize.height = height
         //print(lblSynopsis.frame.height)
-        print(height)
+        loadBannerAd()
+    }
+    override func viewWillTransition(to size: CGSize,
+                                     with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to:size, with:coordinator)
+        coordinator.animate(alongsideTransition: { _ in
+            self.loadBannerAd()
+        })
+    }
+    func loadBannerAd(){
+        let frame = { () -> CGRect in
+            if #available(iOS 11.0, *) {
+                return view.frame.inset(by: view.safeAreaInsets)
+            } else {
+                return view.frame
+            }
+        }()
+        let viewWidth = frame.size.width
+        
+        bannerView.adSize = GADCurrentOrientationAnchoredAdaptiveBannerAdSizeWithWidth(viewWidth)
+        
+        bannerView.load(GADRequest())
     }
 }
