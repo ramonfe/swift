@@ -9,7 +9,7 @@ import UIKit
 import Kingfisher
 import GoogleMobileAds
 
-class DetailMovieViewController: UIViewController {
+class DetailMovieViewController: UIViewController{
     @IBOutlet weak var lblTitulo: UILabel!
     @IBOutlet weak var lblRate: UILabel!
     @IBOutlet weak var lblDirector: UILabel!
@@ -21,11 +21,26 @@ class DetailMovieViewController: UIViewController {
     @IBOutlet weak var myMainView: UIView!
     @IBOutlet weak var lblEstreno: UILabel!
     @IBOutlet weak var bannerView: GADBannerView!
-    
     var pelicula : Peliculas?
+    
+    private var interstitial: GADInterstitialAd?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //prepare interstitial
+        let request = GADRequest()
+        GADInterstitialAd.load(withAdUnitID:"ca-app-pub-3940256099942544/4411468910",
+                               request: request,
+                               completionHandler: { [self] ad, error in
+                                if let error = error {
+                                    print("Failed to load interstitial ad with error: \(error.localizedDescription)")
+                                    return
+                                }
+                                interstitial = ad
+                                interstitial?.fullScreenContentDelegate = self
+                               }
+        )
+        //setup banner
         bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
         bannerView.rootViewController = self
         
@@ -74,5 +89,42 @@ class DetailMovieViewController: UIViewController {
         bannerView.adSize = GADCurrentOrientationAnchoredAdaptiveBannerAdSizeWithWidth(viewWidth)
         
         bannerView.load(GADRequest())
+    }
+    @IBAction func btnTrailer(_ sender: Any) {
+        showInterstitial()
+    }
+//    override func viewWillDisappear(_ animated: Bool) {
+//        showInterstitial()
+//        super.viewDidDisappear(true)
+//    }
+    func showInterstitial(){
+        if interstitial != nil {
+            interstitial?.present(fromRootViewController: self)
+        } else {
+            print("Ad wasn't ready")
+        }
+    }
+    override func willMove(toParent parent: UIViewController?) {
+        super.willMove(toParent: parent)
+        if parent == nil{
+            showInterstitial()
+        }
+    }
+}
+extension DetailMovieViewController:GADFullScreenContentDelegate{
+    
+    /// Tells the delegate that the ad failed to present full screen content.
+    func ad(_ ad: GADFullScreenPresentingAd, didFailToPresentFullScreenContentWithError error: Error) {
+        print("Ad did fail to present full screen content.")
+    }
+    
+    /// Tells the delegate that the ad will present full screen content.
+    func adWillPresentFullScreenContent(_ ad: GADFullScreenPresentingAd) {
+        print("Ad will present full screen content.")
+    }
+    
+    /// Tells the delegate that the ad dismissed full screen content.
+    func adDidDismissFullScreenContent(_ ad: GADFullScreenPresentingAd) {
+        print("Ad did dismiss full screen content.")
     }
 }
