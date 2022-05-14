@@ -30,6 +30,10 @@ class DetailMovieViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadBanners()
+        loadElements()
+    }
+    func loadBanners(){
         //prepare interstitial
         let request = GADRequest()
         GADInterstitialAd.load(withAdUnitID:"ca-app-pub-3940256099942544/4411468910",
@@ -46,10 +50,6 @@ class DetailMovieViewController: UIViewController{
         //setup banner
         bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
         bannerView.rootViewController = self
-        
-        
-        
-        loadElements()
     }
     func loadElements(){
         lblTitulo.text = pelicula?.title
@@ -62,10 +62,10 @@ class DetailMovieViewController: UIViewController{
         if let trailerKey = pelicula?.trailer_key{
             vpHeightConstraint.constant = 300
             //add video
-            videoPlayer.isHidden = true
+            //videoPlayer.isHidden = true
             videoPlayer.load(withVideoId: trailerKey)
             videoPlayer.delegate = self
-    //        self.view.layoutIfNeeded()
+            //        self.view.layoutIfNeeded()
         }
         else{
             vpHeightConstraint.constant = 0
@@ -73,9 +73,23 @@ class DetailMovieViewController: UIViewController{
         var movieImgUrl = pelicula?.image ?? ""
         if (movieImgUrl == "/images/movie_poster-04.jpg" || movieImgUrl == "")
         {
-            movieImgUrl = "https://cl.buscafs.com/www.tomatazos.com/public/uploads/images/334146/334146_140x200.jpg"
+            if let posterPath = pelicula?.poster_path{
+                movieImgUrl = posterPath.replacingOccurrences(of: "http", with: "https")
+            }
+            else {
+                movieImgUrl = "https://cl.buscafs.com/www.tomatazos.com/public/uploads/images/334146/334146_140x200.jpg"
+            }
         }
-        myImage.kf.setImage(with: URL(string: movieImgUrl))
+        let processor = DownsamplingImageProcessor(size: myImage.bounds.size)
+        myImage.kf.indicatorType = .activity
+        myImage.kf.setImage(with: URL(string: movieImgUrl),
+                            placeholder: UIImage(named: "placeholderImage"),
+                            options: [
+                                .processor(processor),
+                                .scaleFactor(UIScreen.main.scale),
+                                .transition(.fade(1)),
+                                .cacheOriginalImage
+                            ])
     }
     override func viewDidAppear(_ animated: Bool) {
         var height: CGFloat
@@ -114,11 +128,11 @@ class DetailMovieViewController: UIViewController{
         showInterstitial()
     }
     func showInterstitial(){
-//        if interstitial != nil {
-//            interstitial?.present(fromRootViewController: self)
-//        } else {
-//            print("Ad wasn't ready")
-//        }
+        //        if interstitial != nil {
+        //            interstitial?.present(fromRootViewController: self)
+        //        } else {
+        //            print("Ad wasn't ready")
+        //        }
     }
     override func willMove(toParent parent: UIViewController?) {
         super.willMove(toParent: parent)
@@ -127,6 +141,7 @@ class DetailMovieViewController: UIViewController{
         }
     }
 }
+// MARK: - GADFullScreenContentDelegate
 extension DetailMovieViewController:GADFullScreenContentDelegate{
     
     /// Tells the delegate that the ad failed to present full screen content.
@@ -144,6 +159,7 @@ extension DetailMovieViewController:GADFullScreenContentDelegate{
         print("Ad did dismiss full screen content.")
     }
 }
+//MARK:- YTPlayerViewDelegate
 extension DetailMovieViewController : YTPlayerViewDelegate{
     func playerViewDidBecomeReady(_ playerView: YTPlayerView) {
         videoPlayer.frame.size.height = 200

@@ -123,9 +123,23 @@ extension SecondViewController:UITableViewDataSource{
         movieImgUrl = peliculas[indexPath.row].image ?? ""
         if (movieImgUrl == "/images/movie_poster-04.jpg" || movieImgUrl == "")
         {
-            movieImgUrl = "https://cl.buscafs.com/www.tomatazos.com/public/uploads/images/334146/334146_140x200.jpg"
+            if let posterPath = peliculas[indexPath.row].poster_path{
+                movieImgUrl = posterPath.replacingOccurrences(of: "http", with: "https")
+            }
+            else {
+                movieImgUrl = "https://cl.buscafs.com/www.tomatazos.com/public/uploads/images/334146/334146_140x200.jpg"
+            }
         }
-        cell?.myImage.kf.setImage(with: URL(string: movieImgUrl))
+        let processor = DownsamplingImageProcessor(size: (cell?.myImage.bounds.size)!)
+        cell?.myImage.kf.indicatorType = .activity
+        cell?.myImage.kf.setImage(with: URL(string: movieImgUrl),
+                            placeholder: UIImage(named: "placeholderImage"),
+                            options: [
+                                .processor(processor),
+                                .scaleFactor(UIScreen.main.scale),
+                                .transition(.fade(1)),
+                                .cacheOriginalImage
+                            ])
         return cell!
     }    
 }

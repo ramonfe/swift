@@ -29,7 +29,8 @@ struct Peliculas:Decodable {
     var trailer_key:String?
     
     private enum CodingKeys:String,CodingKey{
-        case title,image,mx_theater_release_date,critics_score, synopsis,genre,actor,director,id_imdb,trailer_key }
+        case title,image,mx_theater_release_date,critics_score, synopsis,genre,actor,director,id_imdb,
+             backdrop_path,poster_path,trailer_key }
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
@@ -64,7 +65,11 @@ struct Peliculas:Decodable {
         if let trailerKey = try? container.decode(String.self, forKey: .trailer_key){
             self.trailer_key = trailerKey
         }
+        if let backdropPath = try? container.decode(String.self, forKey: .backdrop_path){
+            self.backdrop_path = backdropPath
+        }
+        if let posterPath = try? container.decode(String.self, forKey: .poster_path){
+            self.poster_path = posterPath
+        }
     }
-    
-    
 }

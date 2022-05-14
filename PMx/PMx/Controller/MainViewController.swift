@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  PMx
 //
-//  Created by home on 04/04/22.
+//  Created by Ramon Felix on 04/04/22.
 //
 
 import UIKit
@@ -53,10 +53,7 @@ class ViewController: UIViewController{
         })
     }
     func loadBannerAd(){
-        // Step 2 - Determine the view width to use for the ad width.
         let frame = { () -> CGRect in
-            // Here safe area is taken into account, hence the view frame is used
-            // after the view has been laid out.
             if #available(iOS 11.0, *) {
                 return view.frame.inset(by: view.safeAreaInsets)
             } else {
@@ -64,13 +61,7 @@ class ViewController: UIViewController{
             }
         }()
         let viewWidth = frame.size.width
-        
-        // Step 3 - Get Adaptive GADAdSize and set the ad view.
-        // Here the current interface orientation is used. If the ad is being preloaded
-        // for a future orientation change or different orientation, the function for the
-        // relevant orientation should be used.
         bannerView.adSize = GADCurrentOrientationAnchoredAdaptiveBannerAdSizeWithWidth(viewWidth)
-        // Step 4 - Create an ad request and load the adaptive banner ad.
         bannerView.load(GADRequest())
     }
     func sendFirebaseLog(){
@@ -100,7 +91,7 @@ class ViewController: UIViewController{
         activityIndicator.isHidden=true
     }
 }
-//MARK: UITableViewDataSource
+//MARK: - UITableViewDataSource
 extension ViewController:UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return peliculas.count
@@ -129,13 +120,27 @@ extension ViewController:UITableViewDataSource {
         movieImgUrl = peliculas[indexPath.row].image ?? ""
         if (movieImgUrl == "/images/movie_poster-04.jpg" || movieImgUrl == "")
         {
-            movieImgUrl = "https://cl.buscafs.com/www.tomatazos.com/public/uploads/images/334146/334146_140x200.jpg"
+            if let posterPath = peliculas[indexPath.row].poster_path{
+                movieImgUrl = posterPath.replacingOccurrences(of: "http", with: "https")
+            }
+            else {
+                movieImgUrl = "https://cl.buscafs.com/www.tomatazos.com/public/uploads/images/334146/334146_140x200.jpg"
+            }
         }
-        cell?.myImage.kf.setImage(with: URL(string: movieImgUrl))
+        let processor = DownsamplingImageProcessor(size: (cell?.myImage.bounds.size)!)
+        cell?.myImage.kf.indicatorType = .activity
+        cell?.myImage.kf.setImage(with: URL(string: movieImgUrl),
+                            placeholder: UIImage(named: "placeholderImage"),
+                            options: [
+                                .processor(processor),
+                                .scaleFactor(UIScreen.main.scale),
+                                .transition(.fade(1)),
+                                .cacheOriginalImage
+                            ])
         return cell!
     }
 }
-//MARK: UITableViewDelegate
+//MARK: - UITableViewDelegate
 extension ViewController:UITableViewDelegate
 {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
