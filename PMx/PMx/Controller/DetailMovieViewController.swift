@@ -24,16 +24,19 @@ class DetailMovieViewController: UIViewController{
     @IBOutlet weak var bannerView: GADBannerView!
     @IBOutlet weak var videoPlayer: YTPlayerView!
     @IBOutlet weak var vpHeightConstraint: NSLayoutConstraint!
-    var pelicula : Peliculas?
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
+    var pelicula : Peliculas?
+    var vpHeight = 0
     private var interstitial: GADInterstitialAd?
+    let spinner = UIActivityIndicatorView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadBanners()
+        setupBanners()
         loadElements()
     }
-    func loadBanners(){
+    func setupBanners(){
         //prepare interstitial
         let request = GADRequest()
         GADInterstitialAd.load(withAdUnitID:"ca-app-pub-3940256099942544/4411468910",
@@ -60,15 +63,16 @@ class DetailMovieViewController: UIViewController{
         lblGenre.text = pelicula?.genre?.joined(separator: ",")
         lblEstreno.text = unixTime(fechaUnix: pelicula?.mx_theater_release_date)
         if let trailerKey = pelicula?.trailer_key{
-            vpHeightConstraint.constant = 300
-            //add video
-            //videoPlayer.isHidden = true
+            vpSizeDynamic()
+            //setupSpinner()
+            videoPlayer.isHidden = true
             videoPlayer.load(withVideoId: trailerKey)
             videoPlayer.delegate = self
             //        self.view.layoutIfNeeded()
         }
         else{
             vpHeightConstraint.constant = 0
+            activityIndicator.isHidden = true
         }
         var movieImgUrl = pelicula?.image ?? ""
         if (movieImgUrl == "/images/movie_poster-04.jpg" || movieImgUrl == "")
@@ -92,19 +96,29 @@ class DetailMovieViewController: UIViewController{
                             ])
     }
     override func viewDidAppear(_ animated: Bool) {
+        scrollViewSize()
+        loadBannerAd()
+    }
+    func vpSizeDynamic(){
+        //16 x 9 is the aspect ratio fo HD videos
+        vpHeight = Int(UIScreen.main.bounds.width * 9 / 16)
+        vpHeightConstraint.constant = CGFloat(vpHeight)
+    }
+    func scrollViewSize(){
         var height: CGFloat
-        height =
-            lblSynopsis.frame.height + lblActors.frame.height + myImage.frame.height + lblActors.frame.height + lblGenre.frame.height + 240
+        let elementHeight =
+            lblSynopsis.frame.height + lblActors.frame.height + myImage.frame.height + lblActors.frame.height + lblGenre.frame.height
+        height = elementHeight + CGFloat(vpHeight) + bannerView.frame.height + 85
         
         myScrollView.contentSize.height = height
-        //print(lblSynopsis.frame.height)
-        loadBannerAd()
     }
     override func viewWillTransition(to size: CGSize,
                                      with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to:size, with:coordinator)
         coordinator.animate(alongsideTransition: { _ in
             self.loadBannerAd()
+            self.vpSizeDynamic()
+            self.scrollViewSize()
         })
     }
     override func viewDidDisappear(_ animated: Bool) {
@@ -123,9 +137,6 @@ class DetailMovieViewController: UIViewController{
         bannerView.adSize = GADCurrentOrientationAnchoredAdaptiveBannerAdSizeWithWidth(viewWidth)
         
         bannerView.load(GADRequest())
-    }
-    @IBAction func btnTrailer(_ sender: Any) {
-        showInterstitial()
     }
     func showInterstitial(){
         //        if interstitial != nil {
@@ -162,7 +173,7 @@ extension DetailMovieViewController:GADFullScreenContentDelegate{
 //MARK:- YTPlayerViewDelegate
 extension DetailMovieViewController : YTPlayerViewDelegate{
     func playerViewDidBecomeReady(_ playerView: YTPlayerView) {
-        videoPlayer.frame.size.height = 200
+        activityIndicator.stopAnimating()
         videoPlayer.isHidden = false
     }
 }
