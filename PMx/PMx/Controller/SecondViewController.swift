@@ -21,8 +21,11 @@ class SecondViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"//"ca-app-pub-6687064215304616/1359059372"
-        bannerView.rootViewController = self//ca-app-pub-3940256099942544/2934735716
+        /*test ad: ca-app-pub-3940256099942544/2934735716
+         *Prod Ad: ca-app-pub-6687064215304616/8396694688
+         */
+        bannerView.adUnitID = "ca-app-pub-6687064215304616/8396694688"
+        bannerView.rootViewController = self
         
         sendFirebaseLog()
         showSpinner()
@@ -119,7 +122,10 @@ extension SecondViewController:UITableViewDataSource{
         }
         cell?.actorsDescLabel.text = actorsReduced
         cell?.dateLabel.text = unixTime(fechaUnix: peliculas[indexPath.row].mx_theater_release_date!)
-        cell?.criticLabel.text = peliculas[indexPath.row].critics_score
+        if let score = peliculas[indexPath.row].critics_score {
+            cell?.criticLabel.text = Int(score)! > 0 ? score : ""
+        }
+//        cell?.criticLabel.text = peliculas[indexPath.row].critics_score
         movieImgUrl = peliculas[indexPath.row].image ?? ""
         if (movieImgUrl == "/images/movie_poster-04.jpg" || movieImgUrl == "")
         {

@@ -1,6 +1,6 @@
 
 /* Class = "UINavigationItem"; title = "Peliculas en Mexico"; ObjectID = "4Zb-WH-x1t"; */
-"4Zb-WH-x1t.title" = "Peliculas en Mexico";
+"4Zb-WH-x1t.title" = "Películas en México";
 
 /* Class = "UILabel"; text = "Actores:"; ObjectID = "4an-Dj-MLt"; */
 "4an-Dj-MLt.text" = "Actores:";
@@ -9,7 +9,7 @@
 "Afk-dO-ijs.text" = "lista directores";
 
 /* Class = "UITabBarItem"; title = "Proximos Estrenos"; ObjectID = "B4R-od-qnd"; */
-"B4R-od-qnd.title" = "Proximos Estrenos";
+"B4R-od-qnd.title" = "Próximos Estrenos";
 
 /* Class = "UILabel"; text = "Calificacion:"; ObjectID = "LDj-o3-RET"; */
 "LDj-o3-RET.text" = "Calificación:";
@@ -21,7 +21,7 @@
 "Qi5-pf-8V2.text" = "Generos";
 
 /* Class = "UILabel"; text = "fecha"; ObjectID = "RJy-Jt-Q2i"; */
-"RJy-Jt-Q2i.text" = "fecha";
+"RJy-Jt-Q2i.text" = "Fecha";
 
 /* Class = "UILabel"; text = "Estreno:"; ObjectID = "RZA-T0-Gdy"; */
 "RZA-T0-Gdy.text" = "Estreno:";

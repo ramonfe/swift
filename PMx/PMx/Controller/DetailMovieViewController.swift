@@ -38,8 +38,11 @@ class DetailMovieViewController: UIViewController{
     }
     func setupBanners(){
         //prepare interstitial
+        /*test ad: ca-app-pub-3940256099942544/4411468910
+         *Prod Ad: ca-app-pub-6687064215304616/9790839890
+         */
         let request = GADRequest()
-        GADInterstitialAd.load(withAdUnitID:"ca-app-pub-3940256099942544/4411468910",
+        GADInterstitialAd.load(withAdUnitID:"ca-app-pub-6687064215304616/9790839890",
                                request: request,
                                completionHandler: { [self] ad, error in
                                 if let error = error {
@@ -51,12 +54,17 @@ class DetailMovieViewController: UIViewController{
                                }
         )
         //setup banner
-        bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        /*test ad: ca-app-pub-3940256099942544/2934735716
+         *Prod Ad: ca-app-pub-6687064215304616/3316554559
+         */
+        bannerView.adUnitID = "ca-app-pub-6687064215304616/3316554559"
         bannerView.rootViewController = self
     }
     func loadElements(){
         lblTitulo.text = pelicula?.title
-        lblRate.text = pelicula?.critics_score
+        if let score = pelicula?.critics_score {
+            lblRate.text = Int(score)! > 0 ? score : ""
+        }        
         lblDirector.text = pelicula?.director?.joined(separator: ",")
         lblSynopsis.text = pelicula?.synopsis
         lblActors.text = pelicula?.actor?.joined(separator: ",")
@@ -139,11 +147,11 @@ class DetailMovieViewController: UIViewController{
         bannerView.load(GADRequest())
     }
     func showInterstitial(){
-        //        if interstitial != nil {
-        //            interstitial?.present(fromRootViewController: self)
-        //        } else {
-        //            print("Ad wasn't ready")
-        //        }
+        if interstitial != nil {
+            interstitial?.present(fromRootViewController: self)
+        } else {
+            print("Ad wasn't ready")
+        }
     }
     override func willMove(toParent parent: UIViewController?) {
         super.willMove(toParent: parent)
