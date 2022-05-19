@@ -72,6 +72,7 @@
 		F49C6CCB27FC02D300B4F7CA /* MyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTableViewCell.swift; sourceTree = "<group>"; };
 		F49C6CCC27FC02D300B4F7CA /* MyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyTableViewCell.xib; sourceTree = "<group>"; };
 		F4E978602808F8A0009D34AA /* InterfaceBuilderKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = InterfaceBuilderKit.framework; path = Library/Frameworks/InterfaceBuilderKit.framework; sourceTree = DEVELOPER_DIR; };
+		F4FF379C2835F11200D54ED7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -330,6 +331,7 @@
 				F49C6CB527FBED5800B4F7CA /* Base */,
 				F470CD7E28222BE30017606A /* es-419 */,
 				F470CD8028222BFA0017606A /* es */,
+				F4FF379C2835F11200D54ED7 /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

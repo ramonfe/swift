@@ -1,0 +1,42 @@
+
+/* Class = "UINavigationItem"; title = "Movies in México"; ObjectID = "4Zb-WH-x1t"; */
+"4Zb-WH-x1t.title" = "Movies in Mexico";
+
+/* Class = "UILabel"; text = "Actors:"; ObjectID = "4an-Dj-MLt"; */
+"4an-Dj-MLt.text" = "Actors:";
+
+/* Class = "UILabel"; text = "lista directores"; ObjectID = "Afk-dO-ijs"; */
+"Afk-dO-ijs.text" = "lista directores";
+
+/* Class = "UITabBarItem"; title = "Coming Soon"; ObjectID = "B4R-od-qnd"; */
+"B4R-od-qnd.title" = "Coming Soon";
+
+/* Class = "UILabel"; text = "Rate:"; ObjectID = "LDj-o3-RET"; */
+"LDj-o3-RET.text" = "Rate:";
+
+/* Class = "UILabel"; text = "Titulo"; ObjectID = "LVk-cQ-mzA"; */
+"LVk-cQ-mzA.text" = "Titulo";
+
+/* Class = "UILabel"; text = "Generos"; ObjectID = "Qi5-pf-8V2"; */
+"Qi5-pf-8V2.text" = "Generos";
+
+/* Class = "UILabel"; text = "fecha"; ObjectID = "RJy-Jt-Q2i"; */
+"RJy-Jt-Q2i.text" = "fecha";
+
+/* Class = "UILabel"; text = "Release Date:"; ObjectID = "RZA-T0-Gdy"; */
+"RZA-T0-Gdy.text" = "Release Date:";
+
+/* Class = "UILabel"; text = "Synopsis"; ObjectID = "RoC-N4-Czj"; */
+"RoC-N4-Czj.text" = "Synopsis";
+
+/* Class = "UITabBarItem"; title = "In Theaters"; ObjectID = "TM5-FA-iZ9"; */
+"TM5-FA-iZ9.title" = "In Theaters";
+
+/* Class = "UILabel"; text = "Director:"; ObjectID = "bgf-VX-oVi"; */
+"bgf-VX-oVi.text" = "Director:";
+
+/* Class = "UILabel"; text = "Lista de actores"; ObjectID = "uok-Db-CQ5"; */
+"uok-Db-CQ5.text" = "Lista de actores";
+
+/* Class = "UILabel"; text = "3.7"; ObjectID = "vM6-BR-Ygx"; */
+"vM6-BR-Ygx.text" = "3.7";
