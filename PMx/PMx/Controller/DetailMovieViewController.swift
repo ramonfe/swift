@@ -30,6 +30,7 @@ class DetailMovieViewController: UIViewController{
     var vpHeight = 0
     private var interstitial: GADInterstitialAd?
     let spinner = UIActivityIndicatorView()
+    private var hasTrailer = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,6 +72,7 @@ class DetailMovieViewController: UIViewController{
         lblGenre.text = pelicula?.genre?.joined(separator: ",")
         lblEstreno.text = unixTime(fechaUnix: pelicula?.mx_theater_release_date)
         if let trailerKey = pelicula?.trailer_key{
+            hasTrailer = true
             vpSizeDynamic()
             //setupSpinner()
             videoPlayer.isHidden = true
@@ -155,7 +157,7 @@ class DetailMovieViewController: UIViewController{
     }
     override func willMove(toParent parent: UIViewController?) {
         super.willMove(toParent: parent)
-        if parent == nil{
+        if parent == nil && hasTrailer{
             showInterstitial()
         }
     }
