@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import StoreKit
+import UIKit
 
 extension URL {
     init(staticString string: StaticString) {
@@ -27,5 +29,15 @@ func unixTime(fechaUnix: String? ) -> String{
         localDate = dateFormater.string(from: date)
     }
     return localDate
+}
+
+class ReviewHandler  {
+    static func requestReview(){
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2.0) {
+            if let scene = UIApplication.shared.connectedScenes.first(where: { $0.activationState == .foregroundActive}) as? UIWindowScene{
+                SKStoreReviewController.requestReview(in: scene)
+            }
+        }
+    }
 }
 
