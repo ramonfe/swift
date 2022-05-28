@@ -16,8 +16,6 @@
 		F4781733280CC32A00497E8E /* DetailMovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4781732280CC32A00497E8E /* DetailMovieViewController.swift */; };
 		F48668D128262A400006EDFB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F48668D028262A400006EDFB /* GoogleService-Info.plist */; };
 		F48668D52826302F0006EDFB /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = F48668D42826302F0006EDFB /* FirebaseAnalytics */; };
-		F48668EA2826573C0006EDFB /* GoogleAppMeasurement.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = F48668DC282636890006EDFB /* GoogleAppMeasurement.xcframework */; };
-		F48668ED282657440006EDFB /* GoogleAppMeasurementIdentitySupport.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = F48668DB282636870006EDFB /* GoogleAppMeasurementIdentitySupport.xcframework */; };
 		F48668EF282657480006EDFB /* GoogleMobileAds.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = F48668DE2826368E0006EDFB /* GoogleMobileAds.xcframework */; };
 		F48668F12826574A0006EDFB /* GoogleUtilities.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = F48668DD2826368A0006EDFB /* GoogleUtilities.xcframework */; };
 		F48668F32826574C0006EDFB /* nanopb.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = F48668D7282636840006EDFB /* nanopb.xcframework */; };
@@ -81,9 +79,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F48668F52826574E0006EDFB /* PromisesObjC.xcframework in Frameworks */,
-				F48668EA2826573C0006EDFB /* GoogleAppMeasurement.xcframework in Frameworks */,
 				F48668D52826302F0006EDFB /* FirebaseAnalytics in Frameworks */,
-				F48668ED282657440006EDFB /* GoogleAppMeasurementIdentitySupport.xcframework in Frameworks */,
 				F48668F12826574A0006EDFB /* GoogleUtilities.xcframework in Frameworks */,
 				F4E978652808F8B2009D34AA /* Kingfisher in Frameworks */,
 				F48668F32826574C0006EDFB /* nanopb.xcframework in Frameworks */,
