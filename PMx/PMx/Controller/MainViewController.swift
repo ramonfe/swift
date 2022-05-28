@@ -4,7 +4,7 @@
 //
 //  Created by Ramon Felix on 04/04/22.
 //
-import StoreKit
+//import StoreKit
 import UIKit
 import Kingfisher
 import GoogleMobileAds
@@ -149,13 +149,13 @@ extension ViewController:UITableViewDelegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
         //request review
-        guard let scene = UIApplication.shared.windows.first?.windowScene else{
-            print("no scene")
-            return
-        }
-        SKStoreReviewController.requestReview(in: scene)
-//        peliculaSelected = peliculas[indexPath.row]
-//        performSegue(withIdentifier: "SegueEstrenoDetail", sender: nil)
+//        guard let scene = UIApplication.shared.windows.first?.windowScene else{
+//            print("no scene")
+//            return
+//        }
+//        SKStoreReviewController.requestReview(in: scene)
+        peliculaSelected = peliculas[indexPath.row]
+        performSegue(withIdentifier: "SegueEstrenoDetail", sender: nil)
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
