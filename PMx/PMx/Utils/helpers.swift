@@ -8,15 +8,15 @@
 import Foundation
 import StoreKit
 
-extension URL {
-    init(staticString string: StaticString) {
-        guard let url = URL(string: "\(string)") else {
-            preconditionFailure("Invalid static URL string: \(string)")
-        }
-
-        self = url
-    }
-}
+//extension URL {
+//    init(staticString string: StaticString) {
+//        guard let url = URL(string: "\(string)") else {
+//            preconditionFailure("Invalid static URL string: \(string)")
+//        }
+//
+//        self = url
+//    }
+//}
 
 func unixTime(fechaUnix: String? ) -> String{
     var localDate = "-"

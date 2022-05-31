@@ -60,7 +60,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s1a-Vv-zrT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1428.985507246377" y="416.51785714285711"/>
+            <point key="canvasLocation" x="1429" y="435"/>
         </scene>
         <!--Detail Movie View Controller-->
         <scene sceneID="OGZ-mu-30j">
@@ -367,20 +367,73 @@
                     <connections>
                         <segue destination="OJJ-bL-40i" kind="relationship" relationship="viewControllers" id="f9W-YQ-48A"/>
                         <segue destination="bp6-0i-Nap" kind="relationship" relationship="viewControllers" id="2p0-ez-ELE"/>
+                        <segue destination="BMx-Ea-pIa" kind="relationship" relationship="viewControllers" id="XWc-2a-IfK"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TV3-y9-AZ5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="342" y="-45"/>
         </scene>
+        <!--Stream View Controller-->
+        <scene sceneID="Vxa-G6-LLs">
+            <objects>
+                <viewController id="BMx-Ea-pIa" customClass="StreamViewController" customModule="PMx" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3AF-48-OhN">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Gty-WG-zBN">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cKd-QC-hVT" customClass="GADBannerView">
+                                <rect key="frame" x="0.0" y="625" width="414" height="100"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="kf8-eb-qLy">
+                                        <variation key="heightClass=compact" constant="50"/>
+                                    </constraint>
+                                </constraints>
+                            </view>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" insetsLayoutMarginsFromSafeArea="NO" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="hWL-Gx-3p5">
+                                <rect key="frame" x="188.5" y="344" width="37" height="37"/>
+                                <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="xtX-bR-Zve"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Gty-WG-zBN" firstAttribute="top" secondItem="xtX-bR-Zve" secondAttribute="top" id="5wV-Z0-5iQ"/>
+                            <constraint firstItem="xtX-bR-Zve" firstAttribute="trailing" secondItem="Gty-WG-zBN" secondAttribute="trailing" id="6Gt-Tx-z1g"/>
+                            <constraint firstItem="hWL-Gx-3p5" firstAttribute="centerX" secondItem="3AF-48-OhN" secondAttribute="centerX" id="9Y1-M5-Why"/>
+                            <constraint firstItem="xtX-bR-Zve" firstAttribute="trailing" secondItem="cKd-QC-hVT" secondAttribute="trailing" id="YHy-Pb-W6k"/>
+                            <constraint firstItem="cKd-QC-hVT" firstAttribute="leading" secondItem="xtX-bR-Zve" secondAttribute="leading" id="gNR-HT-AcP"/>
+                            <constraint firstItem="xtX-bR-Zve" firstAttribute="bottom" secondItem="cKd-QC-hVT" secondAttribute="bottom" id="n9Y-DN-NSw"/>
+                            <constraint firstItem="xtX-bR-Zve" firstAttribute="bottom" secondItem="Gty-WG-zBN" secondAttribute="bottom" id="oXI-Bb-bKx"/>
+                            <constraint firstItem="hWL-Gx-3p5" firstAttribute="centerY" secondItem="3AF-48-OhN" secondAttribute="centerY" id="rFL-f5-FDl"/>
+                            <constraint firstItem="Gty-WG-zBN" firstAttribute="leading" secondItem="xtX-bR-Zve" secondAttribute="leading" id="tCx-5z-Wdl"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" systemItem="featured" id="ePv-jW-cbM"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="hWL-Gx-3p5" id="2BI-dg-Xd1"/>
+                        <outlet property="bannerView" destination="cKd-QC-hVT" id="dWp-4I-zgI"/>
+                        <outlet property="tableView" destination="Gty-WG-zBN" id="BpO-02-1Ln"/>
+                        <segue destination="nm4-yS-hHP" kind="show" identifier="SegueStreamDetail" id="nYI-ra-iEg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FZ5-7H-Sz0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1429" y="-889"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="e4y-N4-yhd"/>
+        <segue reference="nYI-ra-iEg"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
-        <image name="film" width="140" height="200"/>
         <image name="film" catalog="system" width="128" height="93"/>
+        <image name="film" width="140" height="200"/>
         <image name="film.fill" catalog="system" width="128" height="93"/>
         <systemColor name="secondaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>

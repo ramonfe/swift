@@ -33,6 +33,7 @@
 		F49C6CCD27FC02D300B4F7CA /* MyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49C6CCB27FC02D300B4F7CA /* MyTableViewCell.swift */; };
 		F49C6CCE27FC02D300B4F7CA /* MyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F49C6CCC27FC02D300B4F7CA /* MyTableViewCell.xib */; };
 		F4E978652808F8B2009D34AA /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = F4E978642808F8B2009D34AA /* Kingfisher */; };
+		F678145B2845BD1E0096DFA8 /* StreamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F678145A2845BD1E0096DFA8 /* StreamViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +72,7 @@
 		F49C6CCC27FC02D300B4F7CA /* MyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyTableViewCell.xib; sourceTree = "<group>"; };
 		F4E978602808F8A0009D34AA /* InterfaceBuilderKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = InterfaceBuilderKit.framework; path = Library/Frameworks/InterfaceBuilderKit.framework; sourceTree = DEVELOPER_DIR; };
 		F4FF379C2835F11200D54ED7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		F678145A2845BD1E0096DFA8 /* StreamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +172,7 @@
 				F49C6CC827FBF56E00B4F7CA /* SecondViewController.swift */,
 				F49C6CCB27FC02D300B4F7CA /* MyTableViewCell.swift */,
 				F4781732280CC32A00497E8E /* DetailMovieViewController.swift */,
+				F678145A2845BD1E0096DFA8 /* StreamViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -279,6 +282,7 @@
 			files = (
 				F49C6CC427FBEF9800B4F7CA /* MyCollectionViewController.swift in Sources */,
 				F49C6CB327FBED5800B4F7CA /* MainViewController.swift in Sources */,
+				F678145B2845BD1E0096DFA8 /* StreamViewController.swift in Sources */,
 				F42889EE28068B0900F55837 /* NetworkProvider.swift in Sources */,
 				F49C6CAF27FBED5800B4F7CA /* AppDelegate.swift in Sources */,
 				F44A280E27FFF832009B786E /* helpers.swift in Sources */,
@@ -467,6 +471,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = DD2C3FV6B6;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = PMx/Info.plist;
@@ -475,6 +480,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				OTHER_CODE_SIGN_FLAGS = "--generate-entitlement-der";
 				"OTHER_CODE_SIGN_FLAGS[sdk=*]" = "--generate-entitlement-der";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ramonfelix.pmx;
@@ -490,6 +496,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = DD2C3FV6B6;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = PMx/Info.plist;
@@ -498,6 +505,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				OTHER_CODE_SIGN_FLAGS = "--generate-entitlement-der";
 				"OTHER_CODE_SIGN_FLAGS[sdk=*]" = "--generate-entitlement-der";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ramonfelix.pmx;
