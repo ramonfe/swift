@@ -8,6 +8,7 @@
 import UIKit
 import Firebase
 import GoogleMobileAds
+import Defaults
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -21,10 +22,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Initialize the Google Mobile Ads SDK.
         GADMobileAds.sharedInstance().start(completionHandler: nil)
         
+        //Score AppUse
+        Defaults[.appSessionsCount] += 1
+        if Defaults[.firstOpenDate] == nil{
+            Defaults[.firstOpenDate] = Date()
+        }
+        
         return true
     }
 
-    // MARK: UISceneSession Lifecycle
+    // MARK: - UISceneSession Lifecycle
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
         // Called when a new scene session is being created.
         // Use this method to select a configuration to create the new scene with.

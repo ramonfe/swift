@@ -4,11 +4,12 @@
 //
 //  Created by Ramon Felix on 04/04/22.
 //
-//import StoreKit
+import StoreKit
 import UIKit
 import Kingfisher
 import GoogleMobileAds
 import FirebaseAnalytics
+import Defaults
 
 class ViewController: UIViewController{
     
@@ -148,12 +149,6 @@ extension ViewController:UITableViewDelegate
 {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
-        //request review
-//        guard let scene = UIApplication.shared.windows.first?.windowScene else{
-//            print("no scene")
-//            return
-//        }
-//        SKStoreReviewController.requestReview(in: scene)
         peliculaSelected = peliculas[indexPath.row]
         performSegue(withIdentifier: "SegueEstrenoDetail", sender: nil)
     }
@@ -165,4 +160,11 @@ extension ViewController:UITableViewDelegate
         }
     }
 }
+////MARK: - Target Scene for Presenting request review
+//extension UIApplication{
+//    var foregroundActiveScene: UIWindowScene?{
+//        connectedScenes
+//            .first(where: {$0.activationState == .foregroundActive}) as? UIWindowScene
+//    }
+//}
 

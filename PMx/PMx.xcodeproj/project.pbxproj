@@ -34,6 +34,7 @@
 		F49C6CCE27FC02D300B4F7CA /* MyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F49C6CCC27FC02D300B4F7CA /* MyTableViewCell.xib */; };
 		F4E978652808F8B2009D34AA /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = F4E978642808F8B2009D34AA /* Kingfisher */; };
 		F678145B2845BD1E0096DFA8 /* StreamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F678145A2845BD1E0096DFA8 /* StreamViewController.swift */; };
+		F683910428505A3F001A7641 /* Defaults in Frameworks */ = {isa = PBXBuildFile; productRef = F683910328505A3F001A7641 /* Defaults */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,6 +84,7 @@
 				F48668F52826574E0006EDFB /* PromisesObjC.xcframework in Frameworks */,
 				F48668D52826302F0006EDFB /* FirebaseAnalytics in Frameworks */,
 				F48668F12826574A0006EDFB /* GoogleUtilities.xcframework in Frameworks */,
+				F683910428505A3F001A7641 /* Defaults in Frameworks */,
 				F4E978652808F8B2009D34AA /* Kingfisher in Frameworks */,
 				F48668F32826574C0006EDFB /* nanopb.xcframework in Frameworks */,
 				F48668F7282657500006EDFB /* UserMessagingPlatform.xcframework in Frameworks */,
@@ -213,6 +215,7 @@
 				F4E978642808F8B2009D34AA /* Kingfisher */,
 				F48668D42826302F0006EDFB /* FirebaseAnalytics */,
 				F4884277282CB9BC00683694 /* YouTubeiOSPlayerHelper */,
+				F683910328505A3F001A7641 /* Defaults */,
 			);
 			productName = PMx;
 			productReference = F49C6CAB27FBED5800B4F7CA /* PMx.app */;
@@ -247,6 +250,7 @@
 				F42889F1280691CA00F55837 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				F48668D32826302E0006EDFB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				F4884276282CB9BB00683694 /* XCRemoteSwiftPackageReference "youtube-ios-player-helper" */,
+				F683910228505A3F001A7641 /* XCRemoteSwiftPackageReference "Defaults" */,
 			);
 			productRefGroup = F49C6CAC27FBED5800B4F7CA /* Products */;
 			projectDirPath = "";
@@ -563,6 +567,14 @@
 				minimumVersion = 1.0.4;
 			};
 		};
+		F683910228505A3F001A7641 /* XCRemoteSwiftPackageReference "Defaults" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sindresorhus/Defaults.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -580,6 +592,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F42889F1280691CA00F55837 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		F683910328505A3F001A7641 /* Defaults */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F683910228505A3F001A7641 /* XCRemoteSwiftPackageReference "Defaults" */;
+			productName = Defaults;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

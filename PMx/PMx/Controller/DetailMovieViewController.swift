@@ -104,6 +104,11 @@ class DetailMovieViewController: UIViewController{
                                 .transition(.fade(1)),
                                 .cacheOriginalImage
                             ])
+        //ask for review
+        let requestWorkItem = DispatchWorkItem{
+            askForRatingIfNeeded()
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2), execute: requestWorkItem)
     }
     override func viewDidAppear(_ animated: Bool) {
         scrollViewSize()
