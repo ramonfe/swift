@@ -9,15 +9,7 @@ import Foundation
 import StoreKit
 import Defaults
 
-//extension URL {
-//    init(staticString string: StaticString) {
-//        guard let url = URL(string: "\(string)") else {
-//            preconditionFailure("Invalid static URL string: \(string)")
-//        }
-//
-//        self = url
-//    }
-//}
+var countShowInterstitial = 0
 
 func unixTime(fechaUnix: String? ) -> String{
     var localDate = "-"
@@ -33,6 +25,7 @@ func unixTime(fechaUnix: String? ) -> String{
 
  func didPerformSignificantEvent(){
      Defaults[.ratingEventsCount] += 1
+     countShowInterstitial += 1
 }
 
 extension Defaults.Keys{
@@ -46,14 +39,6 @@ func askForRatingIfNeeded() {
     askForRating()
 }
 
-func askForRating() {
-    #if os(macOS)
-        SKStoreReviewController.requestReview()
-    #else
-        guard let scene = UIApplication.shared.foregroundActiveScene else { return }
-        SKStoreReviewController.requestReview(in: scene)
-    #endif
-}
 var shouldAskForRating: Bool {
     let daysUntilPromt = 3
     let sesionsUntilPromt = 4
@@ -65,9 +50,27 @@ var shouldAskForRating: Bool {
     let timeSinceFirstLaunch = Date().timeIntervalSince(firstLaunchDate)
     let timeUntilRate: TimeInterval = 60 * 60 * 24 * TimeInterval(daysUntilPromt)
 
+    print("App Sesions Count \(Defaults[.appSessionsCount])")
+    print("Rating Event Count \(Defaults[.ratingEventsCount])")
+    print("First OpenDate \(firstLaunchDate)")
+    
     return Defaults[.appSessionsCount] >= sesionsUntilPromt
         && Defaults[.ratingEventsCount] >= eventsUntilPromt
         && timeSinceFirstLaunch >= timeUntilRate
+}
+
+func askForRating() {
+    //reinicia variables para que no haga lag al intentar el requestview
+    Defaults[.appSessionsCount] = 0
+    Defaults[.ratingEventsCount] = 0
+    Defaults[.firstOpenDate] = Date()
+    
+    #if os(macOS)
+        SKStoreReviewController.requestReview()
+    #else
+        guard let scene = UIApplication.shared.foregroundActiveScene else { return }
+        SKStoreReviewController.requestReview(in: scene)
+    #endif
 }
 //MARK: - Target Scene for Presenting request review
 extension UIApplication{

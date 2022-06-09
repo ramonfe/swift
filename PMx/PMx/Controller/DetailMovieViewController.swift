@@ -155,7 +155,10 @@ class DetailMovieViewController: UIViewController{
     }
     func showInterstitial(){
         if interstitial != nil {
-            interstitial?.present(fromRootViewController: self)
+            if countShowInterstitial >= 2 {
+                countShowInterstitial = 0
+                interstitial?.present(fromRootViewController: self)                
+            }
         } else {
             print("Ad wasn't ready")
         }
@@ -185,10 +188,15 @@ extension DetailMovieViewController:GADFullScreenContentDelegate{
         print("Ad did dismiss full screen content.")
     }
 }
-//MARK:- YTPlayerViewDelegate
+//MARK: - YTPlayerViewDelegate
 extension DetailMovieViewController : YTPlayerViewDelegate{
     func playerViewDidBecomeReady(_ playerView: YTPlayerView) {
         activityIndicator.stopAnimating()
         videoPlayer.isHidden = false
+    }
+    func playerView(_ playerView: YTPlayerView, didChangeTo state: YTPlayerState) {
+        if state == YTPlayerState.playing{
+            didPerformSignificantEvent()
+        }
     }
 }
