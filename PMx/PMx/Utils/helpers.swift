@@ -43,9 +43,9 @@ var shouldAskForRating: Bool {
     let daysUntilPromt = 3
     let sesionsUntilPromt = 4
     let eventsUntilPromt = 5
-#if DEBUG
-    return true
-#endif
+//#if DEBUG
+//    return true
+//#endif
     guard let firstLaunchDate = Defaults[.firstOpenDate] else { return false }
     let timeSinceFirstLaunch = Date().timeIntervalSince(firstLaunchDate)
     let timeUntilRate: TimeInterval = 60 * 60 * 24 * TimeInterval(daysUntilPromt)

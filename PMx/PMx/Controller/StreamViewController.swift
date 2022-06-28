@@ -14,8 +14,8 @@ class StreamViewController: UIViewController {
     @IBOutlet weak var bannerView: GADBannerView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    private var peliculas = [Peliculas]()
-    private var peliculaSelected : Peliculas?
+    private var streamNode = [List]()
+    private var streamNodeSelected : List?
     private var movieImgUrl=""
     
     override func viewDidLoad() {
@@ -68,8 +68,8 @@ class StreamViewController: UIViewController {
     }
     func loadJsonInTable(){
         //carga json
-        NetworkProvider.shared.loadJsonStream{ (estrenos) in
-            self.peliculas = estrenos.ProximosEstrenos
+        NetworkProvider.shared.loadJsonStream{ (strimming) in
+            self.streamNode = strimming.list!
             DispatchQueue.main.async
             {
                 self.hideSpinner()
@@ -94,7 +94,7 @@ class StreamViewController: UIViewController {
 //MARK: - UITableViewDataSource
 extension StreamViewController:UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return peliculas.count
+        return streamNode.count
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         UITableView.automaticDimension
@@ -103,56 +103,60 @@ extension StreamViewController:UITableViewDataSource{
     {
         var actorsReduced = ""
         let cell = tableView.dequeueReusableCell(withIdentifier: "mycustomcell", for: indexPath) as? MyTableViewCell
-        cell?.titleLabel.text=peliculas[indexPath.row].title
-        //validacion para que solo ponga 3 actores maximo
-        if let actorsArr = peliculas[indexPath.row].actor{
-            if peliculas[indexPath.row].actor!.count>2 {
-                actorsReduced = actorsArr[0..<3].joined(separator: ",")
-            }
-            else{
-                actorsReduced = actorsArr.joined(separator: ",")
-            }
-        }
-        cell?.actorsDescLabel.text = actorsReduced
-        cell?.dateLabel.text = unixTime(fechaUnix: peliculas[indexPath.row].mx_theater_release_date!)
-        if let score = peliculas[indexPath.row].critics_score {
-            cell?.criticLabel.text = Int(score)! > 0 ? score : ""
-        }
-        //cell?.criticLabel.text = peliculas[indexPath.row].critics_score
-        movieImgUrl = peliculas[indexPath.row].image ?? ""
-        if (movieImgUrl == "/images/movie_poster-04.jpg" || movieImgUrl == "")
-        {
-            if let posterPath = peliculas[indexPath.row].poster_path{
-                movieImgUrl = posterPath.replacingOccurrences(of: "http", with: "https")
-            }
-            else {
-                movieImgUrl = "https://cl.buscafs.com/www.tomatazos.com/public/uploads/images/334146/334146_140x200.jpg"
-            }
-        }
-        let processor = DownsamplingImageProcessor(size: (cell?.myImage.bounds.size)!)
-        cell?.myImage.kf.indicatorType = .activity
-        cell?.myImage.kf.setImage(with: URL(string: movieImgUrl),
-                            placeholder: UIImage(named: "placeholderImage"),
-                            options: [
-                                .processor(processor),
-                                .scaleFactor(UIScreen.main.scale),
-                                .transition(.fade(1)),
-                                .cacheOriginalImage
-                            ])
+//        cell?.titleLabel.text=streamNode[indexPath.row].ListDetail
+//        //validacion para que solo ponga 3 actores maximo
+//        if let actorsArr = streamNode[indexPath.row].actor{
+//            if streamNode[indexPath.row].actor!.count>2 {
+//                actorsReduced = actorsArr[0..<3].joined(separator: ",")
+//            }
+//            else{
+//                actorsReduced = actorsArr.joined(separator: ",")
+//            }
+//        }
+//        cell?.actorsDescLabel.text = actorsReduced
+//        cell?.dateLabel.text = unixTime(fechaUnix: streamNode[indexPath.row].mx_theater_release_date!)
+//        if let score = streamNode[indexPath.row].critics_score {
+//            cell?.criticLabel.text = score > 0 ? String(score) : ""
+//        }
+//        //cell?.criticLabel.text = peliculas[indexPath.row].critics_score
+//        movieImgUrl = streamNode[indexPath.row].image ?? ""
+//        if (movieImgUrl == "/images/movie_poster-04.jpg" || movieImgUrl == "")
+//        {
+//            if let posterPath = streamNode[indexPath.row].poster_path{
+//                movieImgUrl = posterPath.replacingOccurrences(of: "http", with: "https")
+//            }
+//            else {
+//                movieImgUrl = "https://cl.buscafs.com/www.tomatazos.com/public/uploads/images/334146/334146_140x200.jpg"
+//            }
+//        }
+//        let processor = DownsamplingImageProcessor(size: (cell?.myImage.bounds.size)!)
+//        cell?.myImage.kf.indicatorType = .activity
+//        cell?.myImage.kf.setImage(with: URL(string: movieImgUrl),
+//                            placeholder: UIImage(named: "placeholderImage"),
+//                            options: [
+//                                .processor(processor),
+//                                .scaleFactor(UIScreen.main.scale),
+//                                .transition(.fade(1)),
+//                                .cacheOriginalImage
+//                            ])
         return cell!
     }
 }
 //MARK: - UITableViewDelegate
 extension StreamViewController:UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        peliculaSelected = peliculas[indexPath.row]
+        streamNodeSelected = streamNode[indexPath.row]
         performSegue(withIdentifier: "SegueStreamDetail", sender: nil)
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         //Para pasar la pelicula seleccionada al detailmoviecontroller
         if let destination = segue.destination as? DetailMovieViewController
         {
+            do{
+            let peliculaSelected = try Peliculas(from: streamNode as! Decoder)
             destination.pelicula = peliculaSelected
+            }
+            catch{}
         }
     }
 }

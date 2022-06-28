@@ -44,8 +44,8 @@ final class NetworkProvider{
             
             guard let data = data else { return }
             
-//            let dataAsString = String(data: data, encoding: .utf8)
-            //print(dataAsString)
+            let dataAsString = String(data: data, encoding: .utf8)
+            print(dataAsString!)
             do{
                 let json = try JSONDecoder().decode(ProximosEstrenos.self, from: data)
                 success(json)
@@ -55,23 +55,24 @@ final class NetworkProvider{
             }
         }.resume()
     }
-    func loadJsonStream(success: @escaping ( _ estrenos:ProximosEstrenos) -> (),failure: @escaping (_ error: Error?) -> () ){
+    func loadJsonStream(success: @escaping ( _ strimming:Stream) -> (),failure: @escaping (_ error: Error?) -> () ){
                 
-        guard let url = URL(string: proxEstrenosUrl) else {return}
+        guard let url = URL(string: streamUrl) else {return}
         URLSession.shared.dataTask(with: url) { (data, response, err) in
             //check error
             //check response status 200
             
             guard let data = data else { return }
             
-//            let dataAsString = String(data: data, encoding: .utf8)
-            //print(dataAsString)
+            let dataAsString = String(data: data, encoding: .utf8)
+            print(dataAsString)
             do{
-                let json = try JSONDecoder().decode(ProximosEstrenos.self, from: data)
+                let json = try JSONDecoder().decode(Stream.self, from: data)
+                print(data)
                 success(json)
             } catch let jsonError{
                 failure(jsonError)
-                //print("error serializing: ",jsonError)
+                print("error serializing: ",jsonError)
             }
         }.resume()
     }
