@@ -130,7 +130,11 @@ func filter(products: [Product], query: String?, categories:[Category]?) -> [Pro
     return retValues
 }
 
-print(filter(products: [Product(name: "Ramon", categories: []), Product(name: "Carmen", categories: []) ], query: "em,ca", categories: [Category(name: "cat1")]))
+//print(filter(products: [Product(name: "Ramon", categories: []), Product(name: "Carmen", categories: []) ], query: "em,ca", categories: [Category(name: "cat1")]))
     
-    
+let numbers = ["1","2","fish","3"]
+let evensMap = numbers.map(Int.init)
+let evensCompactMap = numbers.compactMap(Int.init)
+let eventByTwo = evensCompactMap.map{ $0 * 2 }
+print(eventByTwo)
 
