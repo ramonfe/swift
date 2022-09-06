@@ -62,3 +62,75 @@ func BinarySearch(arr: [Int], targetVal: Int) -> Int{
 //SETS
 let colors = Set(["red","green","blue","blue"])
 colors.firstIndex(of: "green")
+
+func fizzBuzz(n: Int) {
+    var valueFizz = ""
+    var valueBuzz = ""
+    var valueNone = ""
+    for i in 1...n {
+        valueFizz = ""
+        valueBuzz = ""
+        valueNone = ""
+        if (i % 3) == 0{
+            valueFizz = "Fizz"
+        }
+        if (i % 5)==0 {
+            valueBuzz = "Buzz"
+        }
+        if i % 3 != 0 && i%5 != 0{
+            valueNone = String(i)
+        }
+        print(valueFizz + valueBuzz + valueNone)
+    }
+}
+//fizzBuzz(n: 15)
+func fizzBuzzR(n: Int) {
+    var value = ""
+    for i in 1...n {
+        value = ""
+        if i % 3 != 0 && i%5 != 0{
+            print(i)
+            continue
+        }
+        if (i % 3) == 0{
+            value = "Fizz"
+        }
+        if (i % 5)==0 {
+            value += "Buzz"
+        }
+        print(value)
+    }
+}
+//fizzBuzzR(n: 15)
+
+struct Product{
+    let name: String
+    let categories: [Category]
+}
+struct Category{
+    let name: String
+}
+
+func filter(products: [Product], query: String?, categories:[Category]?) -> [Product]{
+    let inQuery = query ?? ""
+    let inCat = categories ?? []
+    var retValues = [Product]()
+    
+    if inQuery.isEmpty && inCat.isEmpty {return products}
+    
+    let queries = inQuery.components(separatedBy: [",", " "])
+    
+    for q in queries{
+        retValues.append(contentsOf:
+            products.filter { $0.name.localizedCaseInsensitiveContains(q)}
+        )
+       
+    }
+   
+    return retValues
+}
+
+print(filter(products: [Product(name: "Ramon", categories: []), Product(name: "Carmen", categories: []) ], query: "em,ca", categories: [Category(name: "cat1")]))
+    
+    
+
