@@ -39,9 +39,9 @@ struct ContentView: View {
             .navigationTitle("Posts")
         }
         .task {
-            //await getData()
+            await getData()
         }
-        .onAppear(perform: load)
+        //.onAppear(perform: load)
     }
    
     func save(){

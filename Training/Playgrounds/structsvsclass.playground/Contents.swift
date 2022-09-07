@@ -1,6 +1,6 @@
 import UIKit
 
-class Laptop
+struct Laptop
 {
     var color:String = "Red"
 }
