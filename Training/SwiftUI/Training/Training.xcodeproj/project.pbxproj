@@ -11,6 +11,7 @@
 		F495FC5D28C812410063E1A6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F495FC5C28C812410063E1A6 /* ContentView.swift */; };
 		F495FC5F28C812430063E1A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F495FC5E28C812430063E1A6 /* Assets.xcassets */; };
 		F495FC6228C812430063E1A6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F495FC6128C812430063E1A6 /* Preview Assets.xcassets */; };
+		F61D596B28C8373900DCC0D2 /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61D596A28C8373900DCC0D2 /* FileManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		F495FC5C28C812410063E1A6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F495FC5E28C812430063E1A6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F495FC6128C812430063E1A6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F61D596A28C8373900DCC0D2 /* FileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			children = (
 				F495FC5A28C812410063E1A6 /* TrainingApp.swift */,
 				F495FC5C28C812410063E1A6 /* ContentView.swift */,
+				F61D596A28C8373900DCC0D2 /* FileManager.swift */,
 				F495FC5E28C812430063E1A6 /* Assets.xcassets */,
 				F495FC6028C812430063E1A6 /* Preview Content */,
 			);
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F61D596B28C8373900DCC0D2 /* FileManager.swift in Sources */,
 				F495FC5D28C812410063E1A6 /* ContentView.swift in Sources */,
 				F495FC5B28C812410063E1A6 /* TrainingApp.swift in Sources */,
 			);
