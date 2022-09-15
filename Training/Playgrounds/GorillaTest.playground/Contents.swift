@@ -178,47 +178,45 @@ struct ReviewStats {
     
 }
 
-func getReviewStatistics(reviews: [Review]) -> ReviewStats {
-    // Example input:
-    // [
-    //  Review(reviewId: 3, date: "2021-01-02", rating: 5)
-    //  Review(reviewId: 5, date: "2021-01-15", rating: 1)
-    // ]
-    // Example output:
-    // ReviewStats(newestReviewDate: "2021-01-15",
-    //             oldestReviewDate: "2021-01-02",
-    //             reviewCount: 2,
-    //             averageRating: 3.0)
-    // Explanation:
-    // There are 2 reviews total.
-    // The average rating is 3.0 (1+5)/2.
-    // 2021-01-15 is more recent than 2021-01-02.
-    // COMPLETE ME
-    let myRetReview: ReviewStats
-    let rCount = reviews.count
-    var sumRating = 0
-    var avgRate: Double = 0.0
-    
-    for i in reviews{
-        sumRating += i.rating
-    }
-    avgRate = Double(sumRating / rCount)
-    
-    let dateFormatter = DateFormatter()
-    dateFormatter.dateFormat = "YYYY-MM-dd"
-    
-    avgRate = reviews.map{$0.rating}.a
-    let minDate = reviews.map{$0.dateConvert}.min()
-    let maxDate = reviews.map{$0.dateConvert}.max()
-    
-    let strMinDate = dateFormatter.string(from: minDate!)
-    let strMaxDate = dateFormatter.string(from: maxDate!)
-    
-    myRetReview = ReviewStats(newestReviewDate: strMaxDate, oldestReviewDate: strMinDate, reviewCount: rCount, averageRating: avgRate)
-    
-    return myRetReview
-}
+//func getReviewStatistics(reviews: [Review]) -> ReviewStats {
+//    // Example input:
+//    // [
+//    //  Review(reviewId: 3, date: "2021-01-02", rating: 5)
+//    //  Review(reviewId: 5, date: "2021-01-15", rating: 1)
+//    // ]
+//    // Example output:
+//    // ReviewStats(newestReviewDate: "2021-01-15",
+//    //             oldestReviewDate: "2021-01-02",
+//    //             reviewCount: 2,
+//    //             averageRating: 3.0)
+//    // Explanation:
+//    // There are 2 reviews total.
+//    // The average rating is 3.0 (1+5)/2.
+//    // 2021-01-15 is more recent than 2021-01-02.
+//    // COMPLETE ME
+//    let myRetReview: ReviewStats
+//    let rCount = reviews.count
+//    var sumRating = 0
+//    var avgRate: Double = 0.0
+//
+//    for i in reviews{
+//        sumRating += i.rating
+//    }
+//    avgRate = Double(sumRating / rCount)
+//
+//    let dateFormatter = DateFormatter()
+//    dateFormatter.dateFormat = "YYYY-MM-dd"
+//
+//    avgRate = reviews.map{$0.rating}
+//    let minDate = reviews.map{$0.dateConvert}.min()
+//    let maxDate = reviews.map{$0.dateConvert}.max()
+//
+//    let strMinDate = dateFormatter.string(from: minDate!)
+//    let strMaxDate = dateFormatter.string(from: maxDate!)
+//
+//    myRetReview = ReviewStats(newestReviewDate: strMaxDate, oldestReviewDate: strMinDate, reviewCount: rCount, averageRating: avgRate)
+//
+//    return myRetReview
+//}
 
-print(getReviewStatistics(reviews: [Review(reviewId: 3, date: "2021-01-02", rating: 5),
-                             Review(reviewId: 5, date: "2021-01-15", rating: 1)]))
 
