@@ -48,8 +48,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "97"
             endingLineNumber = "97"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "tableView(_:numberOfRowsInSection:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -64,8 +64,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "107"
             endingLineNumber = "107"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -259,54 +259,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "D321166B-ADA2-42AA-A1F4-C0011D83C5FC"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PMx/Controller/DetailMovieViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "77"
-            endingLineNumber = "77"
-            landmarkName = "loadElements()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "F058D72D-26E2-4043-A863-D3B367463C83"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PMx/Controller/DetailMovieViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
-            landmarkName = "loadElements()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "9B869E8E-AB16-49A4-A4C1-A3F150587804"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PMx/Controller/DetailMovieViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "82"
-            endingLineNumber = "82"
-            landmarkName = "loadElements()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "9DEAFDFF-449E-4326-A989-2A041F8FEA74"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -316,8 +268,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "127"
             endingLineNumber = "127"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

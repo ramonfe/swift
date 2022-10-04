@@ -25,7 +25,7 @@ class ViewController: UIViewController{
         /*test ad: ca-app-pub-3940256099942544/2934735716
          *Prod Ad: ca-app-pub-6687064215304616/1359059372
          */
-        bannerView.adUnitID = "ca-app-pub-6687064215304616/1359059372"
+        bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
         bannerView.rootViewController = self
         
         sendFirebaseLog()
