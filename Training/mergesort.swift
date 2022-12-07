@@ -20,6 +20,7 @@ func merge(arr1: [Int], arr2: [Int]) -> [Int]{
         arr.append(arr2[j])
         j += 1
     }
+    print(arr)
     return arr
 }
 func mergeSort(arr: [Int]) -> [Int]{
